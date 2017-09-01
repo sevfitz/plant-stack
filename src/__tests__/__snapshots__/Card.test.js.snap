@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Component Test displays correct properties 1`] = `
+<div
+  style={
+    Object {
+      "border": "solid black 1px",
+      "height": 400,
+      "margin": "50px auto",
+      "width": 300,
+    }
+  }
+>
+  <img
+    alt="English lavender is commonly grown as an ornamental plant. It is popular for its colourful flowers, its fragrance, and its ability to survive with low water consumption."
+    src="http://thegraphicsfairy.com/wp-content/uploads/2013/08/Lavender-Botanical-Printable-GraphicsFairysm.jpg"
+    style={
+      Object {
+        "maxHeight": 300,
+      }
+    }
+  />
+  <p>
+    Common Name: 
+    Lavender
+  </p>
+  <div>
+    <Choice
+      genus="Lavandula"
+      species="Angustifolia"
+    />
+  </div>
+</div>
+`;
+
+exports[`Choice Component Test displays correct properties 1`] = `<p />`;
