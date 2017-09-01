@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Card } from './components/Card';
-import { AddCard } from './components/AddCard';
+import { Game } from './routes/Game';
 
 class App extends Component {
     render() {
@@ -11,10 +10,7 @@ class App extends Component {
             <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Genus or Species??</h2>
-        </div>
-        <Card />
-        <div>
-            <AddCard />
+          <Game />
         </div>
       </div>
     );
