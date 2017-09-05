@@ -4,17 +4,15 @@ import { Provider } from 'react-redux';
 
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import addcardReducer from './addcard.reducer';
 
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-
+import rootReducer from './root-reducer';
 
 const store = createStore(
-    addcardReducer,
+    rootReducer,
     applyMiddleware(thunk)
-    // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 ReactDOM.render(

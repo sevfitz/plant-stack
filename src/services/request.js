@@ -16,8 +16,5 @@ export const request = {
     },
     post(url, data) {
         return wrap(superagent.post(`${API_URL}${url}`));
-    },
-    patch(url, data) {
-        return wrap(superagent.patch(`${API_URL}${url}`));
     }
 };
