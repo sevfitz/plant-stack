@@ -2,14 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addCard } from '../store/card.actions';
 
-export function AddCard({ name, genus, species, description, url, dispatch }) {
+export function AddCard({ dispatch }) {
+    console.log('dispatch is', dispatch);
     return (
         <div>
             <form onSubmit={event => {
                 event.preventDefault();
                 const form = event.target;
                 const { name, genus, species, description, url } = form.elements;
-                dispatch(addCard(name.value, genus.value, species.value, description.value, url.value));
+                dispatch(addCard({name: name.value, genus: genus.value, species: species.value, description: description.value, url: url.value}));
                 form.reset();
             }}>
                 <title>Add A Plant to the Game!</title>
@@ -38,10 +39,10 @@ export default connect(
     state => {
         console.log('state is', state);
         return ({ 
-        name: state.name, 
-        genus: state.genus, 
-        species: state.species, 
-        description: state.description, 
-        url: state.url 
+            name: state.name, 
+            genus: state.genus, 
+            species: state.species, 
+            description: state.description, 
+            url: state.url 
     })}
 )(AddCard);
