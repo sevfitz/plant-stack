@@ -1,5 +1,5 @@
 import * as actions from '../store/card.constants';
-import { makeAddCard, makeGetCard } from '../store/card.actions';
+import { makeAddCard, makeGetCards } from '../store/card.actions';
 
 describe('Card actions', () => {
 
@@ -18,7 +18,26 @@ describe('Card actions', () => {
 
         dispatchFn(dispatch)
             .then(() => {
-                expect(dispatched).toEqual([ {type: actions.ADD_CARD, payload: card } ]);
+                expect(dispatched).toEqual([ { type: actions.ADD_CARD, payload: card } ]);
+            });
+    });
+
+    it('gets all cards', () => {
+        const cards = [1, 2, 3];
+        const api = {
+            getAll() {
+                return Promise.resolve(cards);
+            }
+        };
+
+        const dispatched = [];
+        const dispatch = action => { dispatched.push(action) };
+        const getCards = makeGetCards(api);
+        const dispatchFn = getCards();
+
+        dispatchFn(dispatch)
+            .then(() => {
+                expect(dispatched).toEqual([ { type: actions.GET_CARDS, payload: cards } ]);
             });
     });
 
