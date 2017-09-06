@@ -1,23 +1,23 @@
-import { ADD_CARD } from './addcard.constants';
+import { ADD_CARD, GET_CARDS, FETCH_HAS_ERRORED, CARDS_ARE_LOADING, CARDS_RETRIEVED } from './card.constants';
 
 export function fetchHasErrored(boolean) {
     return {
-        type: 'FETCH_HAS_ERRORED',
-        hasErrored: boolean
+        type: FETCH_HAS_ERRORED,
+        payload: boolean
     };
 }
 
 export function cardsAreLoading(boolean) {
     return {
-        type: 'CARDS_ARE_LOADING',
-        areLoading: boolean
+        type: CARDS_ARE_LOADING,
+        payload: boolean
     };
 }
 
 export function cardsRetrieved(cards) {
     return {
-        type: 'CARDS_RETRIEVED',
-        cards
+        type: CARDS_RETRIEVED,
+        payload: cards
     };
 }
 

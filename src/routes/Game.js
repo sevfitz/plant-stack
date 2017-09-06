@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addCard } from '../addcard.actions';
+import { addCard } from '../store/card.actions';
 import AddCard from '../components/AddCard';
 import { Card } from '../components/Card';
 import { fetchData } from '../services/fetchData';

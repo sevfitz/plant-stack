@@ -1,8 +1,8 @@
-import { ADD_CARD } from './addcard.constants';
+import { ADD_CARD, GET_CARDS, FETCH_HAS_ERRORED, CARDS_ARE_LOADING, CARDS_RETRIEVED } from './card.constants';
 
 export function fetchHasErrored(state = false, { type, hasErrored }) {
     switch (type) {
-        case 'FETCH_HAS_ERRORED':
+        case FETCH_HAS_ERRORED:
             return hasErrored;
         default:
             return state;
@@ -11,7 +11,7 @@ export function fetchHasErrored(state = false, { type, hasErrored }) {
 
 export function cardsAreLoading(state = false, { type, areLoading }) {
     switch (type) {
-        case 'CARDS_ARE_LOADING':
+        case CARDS_ARE_LOADING:
             return areLoading;
         default:
             return state;
@@ -20,7 +20,7 @@ export function cardsAreLoading(state = false, { type, areLoading }) {
 
 export function cards(state = [], { type, payload }) {
     switch (type) {
-        case 'CARDS_RETRIEVED':
+        case CARDS_RETRIEVED:
             return payload;
         case ADD_CARD:
             return [

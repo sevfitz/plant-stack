@@ -1,9 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addCard } from '../addcard.actions';
+import { addCard } from '../store/card.actions';
 
 export function AddCard({ name, genus, species, description, url, dispatch }) {
-    console.log('arguments', arguments, 'dispatch is', dispatch, 'addCard is', addCard);
     return (
         <div>
             <form onSubmit={event => {
