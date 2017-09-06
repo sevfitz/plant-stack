@@ -1,20 +1,25 @@
-import React from 'react';
-import { cardsAreLoading, cardsRetrieved, fetchHasErrored } from  '../store/card.actions';
+// import React from 'react';
+// import { connect } from 'react-redux';
+// import { cardsAreLoading, getCards, fetchHasErrored } from  '../store/card.actions';
 
-// referenced https://medium.com/@stowball/a-dummys-guide-to-redux-and-thunk-in-react-d8904a7005d3
-export function fetchData() {
-    return (dispatch) => {
-        dispatch(cardsAreLoading(true));
+// // referenced https://medium.com/@stowball/a-dummys-guide-to-redux-and-thunk-in-react-d8904a7005d3
+// export function fetchData({ dispatch }) {
+//     console.log('inside fetchData', fetchData);
+//     return (dispatch) => {
+//         dispatch(cardsAreLoading(true));
 
-        fetch('/api/cards')
-            .then(res => {
-                if (!res.ok) { throw Error(res.statusText); }
+//         dispatch(getCards())
+//             .then(res => {
+//                 console.log('res is', res);
+//                 if (!res.ok) { throw Error(res.statusText); }
             
-            dispatch(cardsAreLoading(false));
-            return res;
-            })
-            .then(res => res.json())
-            .then(cards => dispatch(cardsRetrieved(cards)))
-            .catch(() => dispatch(fetchHasErrored(true)));
-    }
-}
+//             dispatch(cardsAreLoading(false));
+//             return res;
+//             })
+//             .then(res => res.json())
+//             // .then(cards => dispatch(getCards(cards)))
+//             .catch(() => dispatch(fetchHasErrored(true)));
+//     }
+// }
+
+

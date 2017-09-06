@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 Card.PropTypes = {
@@ -19,10 +20,6 @@ export function Choice({ genus, species }) {
     );
 }
 
-// description from https://en.wikipedia.org/wiki/Lavandula_angustifolia: 
-// English lavender is commonly grown as an ornamental plant. It is popular for its colourful flowers, its fragrance, and its ability to survive with low water consumption.
-// lavender img: http://thegraphicsfairy.com/wp-content/uploads/2013/08/Lavender-Botanical-Printable-GraphicsFairysm.jpg
-
 export function Card({ name, genus, species, description, url }) {
     
     return (
@@ -33,4 +30,15 @@ export function Card({ name, genus, species, description, url }) {
         </div>
     );
 }
+
+export default connect(
+    state => {
+        return ({ 
+            name: state.name, 
+            genus: state.genus, 
+            species: state.species, 
+            description: state.description, 
+            url: state.url 
+    })}
+)(Card);
 

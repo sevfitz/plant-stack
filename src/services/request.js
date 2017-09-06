@@ -14,6 +14,7 @@ const wrap = cmd => cmd
 
 export const request = {
     get(url) {
+        console.log('inside request, url is', url);
         return wrap(superagent.get(`${API_URL}${url}`));
     },
     post(url, data) {
