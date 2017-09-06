@@ -1,4 +1,4 @@
-import { ADD_CARD, GET_CARDS, FETCH_HAS_ERRORED, CARDS_ARE_LOADING, CARDS_RETRIEVED } from './card.constants';
+import { ADD_CARD, GET_CARDS, FETCH_HAS_ERRORED, CARDS_ARE_LOADING } from './card.constants';
 
 export function fetchHasErrored(state = false, { type, hasErrored }) {
     switch (type) {
