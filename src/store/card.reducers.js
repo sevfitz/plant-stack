@@ -20,18 +20,12 @@ export function cardsAreLoading(state = false, { type, areLoading }) {
 
 export function cards(state = [], { type, payload }) {
     switch (type) {
-        case CARDS_RETRIEVED:
+        case GET_CARDS:
             return payload;
         case ADD_CARD:
             return [
                 ...state,
-                { 
-                name: payload.name, 
-                genus: payload.genus, 
-                species: payload.species, 
-                description: payload.description, 
-                url: payload.url 
-                }
+                payload
             ];
         default:
             return state;
