@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { addCard } from '../store/card.actions';
 
 export function AddCard({ dispatch }) {
-    console.log('dispatch is', dispatch);
     return (
         <div>
             <form onSubmit={event => {
@@ -37,7 +36,6 @@ export function AddCard({ dispatch }) {
 
 export default connect(
     state => {
-        console.log('state is', state);
         return ({ 
             name: state.name, 
             genus: state.genus, 

@@ -4,7 +4,9 @@ export const API_URL = '/api';
 
 const wrap = cmd => cmd
     .then(
-        r => r.body,
+        r => {
+            return r.body;
+        },
         ({ response }) => {
             throw response.body.error;
         }
@@ -15,6 +17,6 @@ export const request = {
         return wrap(superagent.get(`${API_URL}${url}`));
     },
     post(url, data) {
-        return wrap(superagent.post(`${API_URL}${url}`));
+        return wrap(superagent.post(`${API_URL}${url}`).send(data));
     }
 };
