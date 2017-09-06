@@ -21,8 +21,38 @@ describe('Card reducer', () => {
         const newState = cards([], { type: actions.GET_CARDS, payload: [1, 2, 3] });
         expect(newState).toEqual([1, 2, 3]);
     });
+});
 
+describe('fetchHasErrored reducer', () => {
+    it('initial state is false', () => {
+        const newState = fetchHasErrored(undefined, { type: undefined });
+        expect(newState).toEqual(false);
+    });
 
+    it('payload of true updates state to hasErrored is true', () => {
+        const newState = fetchHasErrored( false, { type: actions.FETCH_HAS_ERRORED, hasErrored: true });
+        expect(newState).toEqual(true);
+    });
 
+    it('payload of false updates state to hasErrored is false', () => {
+        const newState = fetchHasErrored( true, { type: actions.FETCH_HAS_ERRORED, hasErrored: false });
+        expect(newState).toEqual(false);
+    });
+});
 
+describe('cardsAreLoading reducer', () => {
+    it('initial state is false', () => {
+        const newState = cardsAreLoading(undefined, { type: undefined });
+        expect(newState).toEqual(false);
+    });
+
+    it('payload of true updates state to areLoading is true', () => {
+        const newState = cardsAreLoading( false, { type: actions.CARDS_ARE_LOADING, areLoading: true });
+        expect(newState).toEqual(true);
+    });
+
+    it('payload of false updates state to areLoading is false', () => {
+        const newState = cardsAreLoading( true, { type: actions.CARDS_ARE_LOADING, areLoading: false });
+        expect(newState).toEqual(false);
+    });
 });
