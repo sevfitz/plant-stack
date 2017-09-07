@@ -20,13 +20,13 @@ export function Choice({ genus, species }) {
     );
 }
 
-export function Card(card) {
-    debugger
+export function Card({card}) {
+    const { name, genus, species, description, url } = card;
     return (
         <div style={{ border: 'solid black 1px', width: 300, height: 400, margin: '50px auto' }}>
-            {/* <img style={{ maxHeight: 300 }} src={url} alt={description} />
-            <p>Common Name: {name}</p> */}
-            {/* <div><Choice genus={genus} species={species} /></div> */}
+            <img style={{ maxHeight: 300 }} src={url} alt={description} />
+            <p>Common Name: {name}</p>
+            <div><Choice genus={genus} species={species} /></div>
         </div>
     );
 }

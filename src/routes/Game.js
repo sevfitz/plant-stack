@@ -6,7 +6,6 @@ import AddCard from '../components/AddCard';
 import { Card } from '../components/Card';
 import { cardsAreLoading, getCards, fetchHasErrored } from  '../store/card.actions';
 
-// referenced https://medium.com/@stowball/a-dummys-guide-to-redux-and-thunk-in-react-d8904a7005d3
 function fetchData() {
     return (dispatch) => {
         dispatch(getCards())
@@ -23,7 +22,6 @@ function fetchData() {
 export function selectCard(cards) {
     const index = Math.floor(Math.random() * cards.length);
     // TODO: push card into seenCards here
-    console.log('cards[index] is', cards[index]);
     return cards[index];
 }
 
@@ -67,3 +65,10 @@ export class Game extends Component {
     };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Game);
+
+// TODO: create new row of cards that get filled from array of completed
+// card objects as seen - first put on the right side, then make card
+// components
+
+// also TODO: auth with addCard being option after logging in
+// then show data after add it?

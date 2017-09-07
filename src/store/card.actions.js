@@ -9,7 +9,6 @@ export function fetchHasErrored(boolean) {
 }
 
 export function cardsAreLoading(boolean) {
-    console.log('in cardsAreLoading', boolean);
     return {
         type: CARDS_ARE_LOADING,
         areLoading: boolean
@@ -41,7 +40,6 @@ export function makeGetCards(api) {
             return api
                 .getAll()
                 .then(cards => {
-                    console.log('inside getCards, cards are', cards);
                     dispatch({ type: GET_CARDS, payload: cards });
                     return cards;
                 });
