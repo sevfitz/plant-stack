@@ -6,78 +6,44 @@ import AddCard from '../components/AddCard';
 import { Card } from '../components/Card';
 import { cardsAreLoading, getCards, fetchHasErrored } from  '../store/card.actions';
 
-// export function fetchData({ dispatch }) {
-//     console.log('inside fetchData', fetchData);
-//     return (dispatch) => {
-//         dispatch(cardsAreLoading(true));
-
-//         dispatch(getCards())
-//             .then(res => {
-//                 console.log('res is', res);
-//                 if (!res.ok) { throw Error(res.statusText); }
-            
-//             dispatch(cardsAreLoading(false));
-//             return res;
-//             })
-//             .then(res => res.json())
-//             // .then(cards => dispatch(getCards(cards)))
-//             .catch(() => dispatch(fetchHasErrored(true)));
-//     }
-// }
-
-export class Game extends Component {
-    
-    fetchData({dispatch}) {
-        dispatch(cardsAreLoading(true));
-    
+// referenced https://medium.com/@stowball/a-dummys-guide-to-redux-and-thunk-in-react-d8904a7005d3
+function fetchData() {
+    return (dispatch) => {
         dispatch(getCards())
             .then(res => {
-                console.log('res is', res);
-                if (!res.ok) { throw Error(res.statusText); }
-    
                 dispatch(cardsAreLoading(false));
                 return res;
             })
-            .then(res => res.json())
-            // .then(cards => dispatch(getCards(cards)))
-            .catch(() => dispatch(fetchHasErrored(true)));
+            .catch((e) => {
+                dispatch(fetchHasErrored(true));
+            });
     }
-    // referenced https://medium.com/@stowball/a-dummys-guide-to-redux-and-thunk-in-react-d8904a7005d3
+}
 
-    // componentDidMount({dispatch}) {
-    //     const cards = this.fetchData({dispatch});
-    //     console.log('cards is', cards);
-    // }
-    // onAdd(name, genus, species, description, url) {
-    //     fetch('/api/cards', {
-    //         method: "POST",
-    //         headers: new Headers({
-    //             'Content-Type': 'application/json'
-    //         }),
-    //         body: JSON.stringify({ name, genus, species, description, url })
-    //     })
-    //     .then(res => res.json())
-    //     .then(card => {
-    //         this.setState({ cards: [
-    //             ...this.state.cards,
-    //             card
-    //         ]});
-    //     })
-    //     .catch(error => console.log(error));
-    // }
+export function selectCard(cards) {
+    const index = Math.floor(Math.random() * cards.length);
+    // TODO: push card into seenCards here
+    console.log('cards[index] is', cards[index]);
+    return cards[index];
+}
+
+export class Game extends Component {
+
+    componentDidMount() {
+        this.props.fetchData();
+    }
 
     render() {
         if (this.props.hasErrored) {
             return <p>There was an error loading the cards.</p>;
         }
-        if (this.props.cardsAreLoading) {
+        if (this.props.isLoading) {
             return <p>Loading...</p>;
         }
-
         return (
             <div>
                 <div>
-                    <Card />
+                    <Card card={selectCard(this.props.cards)}/>
                 </div>
                 <div>
                     <AddCard />
@@ -90,18 +56,14 @@ export class Game extends Component {
     const mapStateToProps = (state) => {
         return {
             cards: state.cards,
+            // seenCards: state.seenCards,
             hasErrored: state.fetchHasErrored,
             isLoading: state.cardsAreLoading
         };
     };
     
-    const mapDispatchToProps = (dispatch) => {
-        // console.log('dispatch is', dispatch);
-        // dispatch(getCards());
-        // return bindActionCreators( { addCard }, dispatch );
-        return {
-            fetchData: () => dispatch(this.fetchData())
-        };
+    const mapDispatchToProps = {
+        fetchData
     };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Game);

@@ -9,7 +9,7 @@ export function fetchHasErrored(state = false, { type, hasErrored }) {
     }
 }
 
-export function cardsAreLoading(state = false, { type, areLoading }) {
+export function cardsAreLoading(state = true, { type, areLoading }) {
     switch (type) {
         case CARDS_ARE_LOADING:
             return areLoading;
@@ -17,6 +17,10 @@ export function cardsAreLoading(state = false, { type, areLoading }) {
             return state;
     }
 }
+
+// export function seenCards(state=[], { type, payload }) {
+
+// }
 
 export function cards(state = [], { type, payload }) {
     switch (type) {

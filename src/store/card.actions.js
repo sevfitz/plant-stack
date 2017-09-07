@@ -42,7 +42,8 @@ export function makeGetCards(api) {
                 .getAll()
                 .then(cards => {
                     console.log('inside getCards, cards are', cards);
-                    dispatch({ type: GET_CARDS, payload: cards })
+                    dispatch({ type: GET_CARDS, payload: cards });
+                    return cards;
                 });
         }
     }
