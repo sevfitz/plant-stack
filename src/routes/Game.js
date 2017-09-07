@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from  'redux';
-import { addCard } from '../store/card.actions';
-import AddCard from '../components/AddCard';
+// import { addCard } from '../store/card.actions';
+// import AddCard from '../components/AddCard';
 import { Card } from '../components/Card';
 import { cardsAreLoading, getCards, fetchHasErrored } from  '../store/card.actions';
 
@@ -44,7 +44,7 @@ export class Game extends Component {
                     <Card card={selectCard(this.props.cards)}/>
                 </div>
                 <div>
-                    <AddCard />
+                    {/* <AddCard /> */}
                 </div>
             </div>
         );
