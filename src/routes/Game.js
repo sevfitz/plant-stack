@@ -11,6 +11,7 @@ function fetchData() {
     return (dispatch) => {
         dispatch(getCards())
             .then(res => {
+                dispatch({ type: 'RANDOM_CARD', payload: { cards: res } });
                 dispatch(cardsAreLoading(false));
                 return res;
             })
@@ -18,18 +19,6 @@ function fetchData() {
                 dispatch(fetchHasErrored(true));
             });
     }
-}
-
-export function selectCard(cards) {
-    const index = Math.floor(Math.random() * cards.length);
-    // TODO: push card into seenCards here
-    return cards[index];
-}
-
-export function makeChoice({ genus, species }) {
-    const choiceArray = [genus, species];
-    const index = Math.floor(Math.random() * choiceArray.length);
-    return choiceArray[index];
 }
 
 export class Game extends Component {
@@ -46,15 +35,13 @@ export class Game extends Component {
             return <p>Loading...</p>;
         }
         
-        const selectedCard = selectCard(this.props.cards);
-        const choice = makeChoice(selectedCard);
         return (
             <div>
                 <div>
-                    <Card card={selectedCard} choice={choice}/>
+                    <Card card={this.props.card} choice={this.props.display}/>
                 </div>
                 <div>
-                    <Selection card={selectedCard} choice={choice}/>
+                    <Selection card={this.props.card} choice={this.props.display}/>
                 </div>
             </div>
         );
@@ -62,8 +49,11 @@ export class Game extends Component {
 }
 
     const mapStateToProps = (state) => {
+        const selectedCard = state.cards.find((card) => card._id === state.selection._id);
+
         return {
-            cards: state.cards,
+            card: selectedCard,
+            display: state.selection.choice,
             // seenCards: state.seenCards,
             hasErrored: state.fetchHasErrored,
             isLoading: state.cardsAreLoading

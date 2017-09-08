@@ -1,2 +1,31 @@
 import * as actions from '../store/selection.constants';
-import {  } from '../store/selection.actions';
+import { selectGenus } from '../store/selection.actions';
+
+describe('Selection actions', () => {
+
+    it('selection creates corresponding object', () => {
+        const selections = [];
+        const selection = {
+            plantID: 123,
+            species: 'some species',
+            genus: 'some genus'
+        };
+        const expectedPayload = {
+            plantID: 123,
+            species: {
+                correct: true,
+                seen: false
+            },
+            genus: {
+                correct: true,
+                seen: true
+            }
+        }
+
+        expect(selectGenus(selection)).toEqual({ type: actions.SELECT_GENUS, payload: expectedPayload })
+
+
+
+
+    });
+});

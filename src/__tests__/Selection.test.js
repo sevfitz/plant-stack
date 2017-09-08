@@ -11,21 +11,3 @@ describe('Selection Component Snapshot', () => {
         expect(toJSON(wrapper)).toMatchSnapshot();
     });
 });
-
-
-// describe('Choice Component Test', () => {
-
-//     it('displays correct properties', () => {
-//         const wrapper = shallow(<Choice genus='' species='' />);
-//         expect(toJSON(wrapper)).toMatchSnapshot();
-//     });
-// });
-
-// describe('Card Component Test', () => {
-
-//     it('displays correct properties', () => {
-//         const wrapper = shallow(<Card name={name} genus={genus} species={species} description={description} url={url} />);
-//         expect(toJSON(wrapper)).toMatchSnapshot();
-//     });
-
-// });
