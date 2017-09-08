@@ -11,6 +11,8 @@ const name = 'Lavender';
 const genus = 'Lavandula';
 const species = 'Angustifolia';
 
+const testCard = { name, genus, species, description, url };
+
 describe('Choice Component Test', () => {
 
     it('displays correct properties', () => {
@@ -22,7 +24,7 @@ describe('Choice Component Test', () => {
 describe('Card Component Test', () => {
 
     it('displays correct properties', () => {
-        const wrapper = shallow(<Card name={name} genus={genus} species={species} description={description} url={url} />);
+        const wrapper = shallow(<Card card={testCard} />);
         expect(toJSON(wrapper)).toMatchSnapshot();
     });
 

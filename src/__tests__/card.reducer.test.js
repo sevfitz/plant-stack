@@ -41,9 +41,9 @@ describe('fetchHasErrored reducer', () => {
 });
 
 describe('cardsAreLoading reducer', () => {
-    it('initial state is false', () => {
+    it('initial state is true', () => {
         const newState = cardsAreLoading(undefined, { type: undefined });
-        expect(newState).toEqual(false);
+        expect(newState).toEqual(true);
     });
 
     it('payload of true updates state to areLoading is true', () => {

@@ -33,4 +33,15 @@ exports[`Card Component Test displays correct properties 1`] = `
 </div>
 `;
 
-exports[`Choice Component Test displays correct properties 1`] = `<p />`;
+exports[`Choice Component Test displays correct properties 1`] = `
+<p
+  style={
+    Object {
+      "color": "brown",
+      "fontSize": "1.5em",
+    }
+  }
+>
+  ??
+</p>
+`;

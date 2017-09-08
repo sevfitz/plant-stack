@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Selection Component Snapshot displays correct properties 1`] = `
+<div>
+  <form>
+    <p>
+      I think this is this plant's...
+    </p>
+    <styled.button>
+      Genus
+    </styled.button>
+    <styled.button>
+      Species
+    </styled.button>
+  </form>
+</div>
+`;

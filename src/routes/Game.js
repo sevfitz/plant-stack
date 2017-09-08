@@ -5,6 +5,7 @@ import { bindActionCreators } from  'redux';
 // import AddCard from '../components/AddCard';
 import { Card } from '../components/Card';
 import { cardsAreLoading, getCards, fetchHasErrored } from  '../store/card.actions';
+import { Selection } from '../components/Selection';
 
 function fetchData() {
     return (dispatch) => {
@@ -25,12 +26,18 @@ export function selectCard(cards) {
     return cards[index];
 }
 
-export class Game extends Component {
+export function makeChoice({ genus, species }) {
+    const choiceArray = [genus, species];
+    const index = Math.floor(Math.random() * choiceArray.length);
+    return choiceArray[index];
+}
 
+export class Game extends Component {
+    
     componentDidMount() {
         this.props.fetchData();
     }
-
+    
     render() {
         if (this.props.hasErrored) {
             return <p>There was an error loading the cards.</p>;
@@ -38,13 +45,16 @@ export class Game extends Component {
         if (this.props.isLoading) {
             return <p>Loading...</p>;
         }
+        
+        const selectedCard = selectCard(this.props.cards);
+        const choice = makeChoice(selectedCard);
         return (
             <div>
                 <div>
-                    <Card card={selectCard(this.props.cards)}/>
+                    <Card card={selectedCard} choice={choice}/>
                 </div>
                 <div>
-                    {/* <AddCard /> */}
+                    <Selection card={selectedCard} choice={choice}/>
                 </div>
             </div>
         );

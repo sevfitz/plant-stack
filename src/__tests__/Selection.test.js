@@ -4,12 +4,14 @@ import toJSON from 'enzyme-to-json';
 
 import { Selection } from '../components/Selection';
 
+describe('Selection Component Snapshot', () => {
 
-// const description = 'English lavender is commonly grown as an ornamental plant. It is popular for its colourful flowers, its fragrance, and its ability to survive with low water consumption.';
-// const url = 'http://thegraphicsfairy.com/wp-content/uploads/2013/08/Lavender-Botanical-Printable-GraphicsFairysm.jpg';
-// const name = 'Lavender';
-// const genus = 'Lavandula';
-// const species = 'Angustifolia';
+    it('displays correct properties', () => {
+        const wrapper = shallow(<Selection />);
+        expect(toJSON(wrapper)).toMatchSnapshot();
+    });
+});
+
 
 // describe('Choice Component Test', () => {
 
