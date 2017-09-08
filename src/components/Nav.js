@@ -9,9 +9,10 @@ const NavList = styled.ul`
     `;
     
     const NavItem = styled.li`
+    text-align: left;
     display: inline-block;
-    margin: 10px;
-    // list-style-type: none;
+    margin: 20px;
+    list-style-type: none;
 `;
 
 function Nav({ location }) {

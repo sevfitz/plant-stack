@@ -21,9 +21,9 @@ class App extends Component {
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <h2>Genus or Species??</h2>
-            <Nav />
           </div>
           <div>
+            <Nav />
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/game" component={Game} />
