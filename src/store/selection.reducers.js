@@ -1,7 +1,13 @@
 export function selection(state = {}, { type, payload }) {
+    console.log('type is', type);
     switch (type) {
-        case 'SELECT_CARD':
-        return payload;
+        case 'CHOOSE_GENUS':
+            console.log('chose genus state', state, 'payload', payload);
+            
+            return payload;
+            case 'CHOOSE_SPECIES':
+            console.log('chose species state', state, 'payload', payload);
+            return payload;
         case 'RANDOM_CARD': {
             const selectedCard = selectCard(payload.cards);
             return {

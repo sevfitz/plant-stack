@@ -48,21 +48,21 @@ export class Game extends Component {
     }
 }
 
-    const mapStateToProps = (state) => {
-        const selectedCard = state.cards.find((card) => card._id === state.selection._id);
+const mapStateToProps = (state) => {
+    const selectedCard = state.cards.find((card) => card._id === state.selection._id);
 
-        return {
-            card: selectedCard,
-            display: state.selection.choice,
-            // seenCards: state.seenCards,
-            hasErrored: state.fetchHasErrored,
-            isLoading: state.cardsAreLoading
-        };
+    return {
+        card: selectedCard,
+        display: state.selection.choice,
+        // seenCards: state.seenCards,
+        hasErrored: state.fetchHasErrored,
+        isLoading: state.cardsAreLoading
     };
-    
-    const mapDispatchToProps = {
-        fetchData
-    };
+};
+
+const mapDispatchToProps = {
+    fetchData
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Game);
 
