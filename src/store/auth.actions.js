@@ -6,7 +6,7 @@ export function checkForToken() {
     return dispatch => {
         const token = getStoredToken();
         if(!token) return;
-
+        console.log('inside checkforTOken', token);
         dispatch({ type: actions.GOT_TOKEN, payload: token });
 
         return authApi.verify()
