@@ -8,5 +8,8 @@ export default {
     },
     add(card) {
         return request.post(URL, card);
+    },
+    remove(id) {
+        return request.delete(`${URL}/${id}`);
     }
 };
