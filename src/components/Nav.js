@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { NavLink, Route, withRouter } from 'react-router-dom';
-import qs from 'qs';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { signout } from '../store/auth.actions';
 import styled from 'styled-components';
 
 const NavList = styled.ul`
@@ -15,20 +16,33 @@ const NavList = styled.ul`
     list-style-type: none;
 `;
 
-function Nav({ location }) {
+const NavLink = props => <Link style={{ color: 'steelblue' }} { ...props}/>;
+
+function Nav({ user, signout }) {
     return (
-        <div>
-            <Route path="/" />
+        <nav>
             <NavList>
                 <NavItem><NavLink to="/">Home</NavLink></NavItem>
                 <NavItem><NavLink to="/game">Game</NavLink></NavItem>
-                <NavItem><NavLink to="/addcard">Add a Card</NavLink></NavItem>
+                <NavItem>
+                    { user
+                    ? <NavLink to='/' onClick = {signout}>Logout</NavLink>
+                    : <NavLink to="/auth/signin">Login</NavLink>
+                    /* <NavLink to="/addcard" onClick>Add a Card</NavLink> */
+                    }
+                </NavItem>
             </NavList>
-        </div>
+        </nav>
     );
 }
 
-export default withRouter(Nav);
+export default connect(
+    state => ({ user: state.auth.user }),
+    dispatch => ({
+        signout() { dispatch(signout()); }
+    })
+)(Nav);
+
 
 
 
