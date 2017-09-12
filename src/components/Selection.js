@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { chooseGenus, chooseSpecies } from '../store/selection.actions';
+// import { chooseGenus, chooseSpecies } from '../store/selection.actions';
+import { bindActionCreators } from  'redux';
+
 
 const SelectButton = styled.button`
     background-color: #ffed64;
@@ -19,11 +21,42 @@ const SelectButton = styled.button`
 //         : dispatch({ type: 'CHOSE_SPECIES', payload: { _id: _id, displayed: displayed, chose: chose } })
 //     }
 // }
+// export function chooseGenus(_id, displayed, chose) {
+//     console.log('chosegenus');
+//     return (dispatch) => {
+//         dispatch({
+//             type: 'CHOOSE_GENUS',
+//             payload: {
+//                 _id: _id,
+//                 displayed: displayed,
+//                 chose: chose
+//             }
+//         });        
+//     }
+// } 
+// export function chooseSpecies(_id, displayed, chose) {
+//         console.log('chosespecies');
+//         return (dispatch) => {
+//             console.log('after dispatch', dispatch);
+//             dispatch({ 
+//                 type: 'CHOOSE_SPECIES', 
+//                 payload: { 
+//                     _id: _id, 
+//                     displayed: displayed, 
+//                     chose: chose 
+//                 } 
+//             });
+//         }
+//     }
 
 
 export function Selection(props) {
-    const { card, choice } = props;
+    const { card, choice, onSelectGenus, onSelectSpecies } = props;
+    console.log('props ', props);
     const { _id, name, genus, species } = card;
+    
+    
+
     return(
         <div>
             <form onSubmit={event => {
@@ -34,9 +67,9 @@ export function Selection(props) {
                 debugger */}
             }}>
                 <p>I think {choice} is the {name}'s...</p>
-                <SelectButton type="submit" onClick={(dispatch) => dispatch(chooseGenus(_id, choice, 'genus'))}>Genus</SelectButton>
+                <SelectButton type="submit" onClick={() => onSelectGenus(_id, choice, 'genus')}>Genus</SelectButton>
                 <span> OR </span>
-                <SelectButton type="submit" onClick={(dispatch) => dispatch(chooseSpecies(_id, choice, 'species'))}>Species</SelectButton>
+                <SelectButton type="submit" onClick={() => onSelectSpecies(_id, choice, 'species')}>Species</SelectButton>
             </form>
         </div>
     );
@@ -54,16 +87,20 @@ export function Selection(props) {
 // )(Selection);
 
 const mapStateToProps = (state) => {
-    console.log('state in Selection is', state);
+    debugger
     const selectedCard = state.cards.find((card) => card._id === state.selection._id);
     return {
         card: selectedCard
     };
 };
 
+// function mapDispatchToProps(dispatch) {
+//     return bindActionCreators({ chooseGenus, chooseSpecies }, dispatch);
+// }
+
 const mapDispatchToProps = {
-    chooseGenus,
-    chooseSpecies
+    // chooseGenus,
+    // chooseSpecies
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Selection);

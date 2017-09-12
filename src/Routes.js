@@ -15,9 +15,9 @@ import PrivateRoute from './PrivateRoute';
 export default () => (
     <Switch>
         <Route exact path="/" render={() => <Home/>}/>;
-        <Route exact path="/auth" render={() => <Auth/>}/>;
+        <Route path="/auth" render={() => <Auth/>}/>;
         <Route exact path="/game" render={() => <Game/>}/>;
-        <PrivateRoute exact path="/addcards" render={() => <AddCard/>}/>;
+        <PrivateRoute exact path="/cards" render={() => <AddCard/>}/>;
         <Redirect to="/"/>
     </Switch>
 );  

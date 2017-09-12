@@ -17,13 +17,12 @@ function Auth({ user, signin, signup, error, location }) {
     const redirect = location.state ? location.state.from : '/';
 
     if(user) return <Redirect to={redirect} />;
-    debugger
     return (
         <CenteredDiv>
             <Switch>
                 <Route path="/auth/signin" component={() => (
                     <div>
-                        <p>Not yet registered? <Link to="/auth/signin">Sign Up</Link></p>
+                        <p>Not yet registered? <Link to="/auth/signup">Sign Up</Link></p>
                         <Credentials submit={signin} />
                     </div>
                 )}/>

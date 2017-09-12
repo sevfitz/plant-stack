@@ -35,6 +35,7 @@ function Nav({ user, signout }) {
         </nav>
     );
 }
+//TODO: add a logout link that clears the token and redirects to /
 
 export default connect(
     state => ({ user: state.auth.user }),
