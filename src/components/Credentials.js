@@ -15,7 +15,6 @@ export default ({ submit, allowName = false }) => (
     <Form onSubmit={e => {
         e.preventDefault();
         const { elements } = e.target;
-        console.log('elements', elements);
         const data = Object.keys(elements).reduce((obj, key) => {
             obj[key] = elements[key].value;
             return obj;

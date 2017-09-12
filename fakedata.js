@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 from http://thegraphicsfairy.com/free-vintage-flower-images/
 
 description from: https://en.wikipedia.org/wiki/Lavandula_angustifolia: 
@@ -35,3 +37,10 @@ description from: https://en.wikipedia.org/wiki/Leucanthemum_vulgare
 description: This is a widespread flowering plant native to Europe and the temperate regions of Asia and an introduced plant to North America, Australia and New Zealand. It is one of a number of family Asteraceae plants to be called a "daisy", and has the additional vernacular names common daisy, dog daisy and moon daisy.
 img url: http://thegraphicsfairy.com/wp-content/uploads/blogger/-muCu66Md59g/ToJcuJvaE9I/AAAAAAAAONE/0jvZlNAtdxM/s1600/daisy%2Bvintage%2Bimage%2Bgraphicsfairy005sm.jpg
 
+Tried to add via privateroute:
+name: Lilac
+genus: Syringa
+species: Vulgaris
+description from: https://en.wikipedia.org/wiki/Syringa_vulgaris
+description: Lilac is a species of flowering plant in the olive family Oleaceae, native to the Balkan Peninsula, where it grows on rocky hills. It is not regarded as an aggressive species, found in the wild in widely scattered sites, usually in the vicinity of past or present human habitations.
+img url: http://thegraphicsfairy.com/wp-content/uploads/2013/04/Vintage-Botanical-Printable-Lilacs-GraphicsFairy3.jpg

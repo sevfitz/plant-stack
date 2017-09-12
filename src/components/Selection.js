@@ -1,9 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-// import { chooseGenus, chooseSpecies } from '../store/selection.actions';
-import { bindActionCreators } from  'redux';
-
 
 const SelectButton = styled.button`
     background-color: #ffed64;
@@ -14,46 +11,9 @@ const SelectButton = styled.button`
     border-radius: 25px;
 `;
 
-// function makeChoice(_id, displayed, chose) {
-//     return (dispatch) => {
-//         chose === 'genus' 
-//         ? dispatch({ type: 'CHOSE_GENUS', payload: { _id: _id, displayed: displayed, chose: chose } })
-//         : dispatch({ type: 'CHOSE_SPECIES', payload: { _id: _id, displayed: displayed, chose: chose } })
-//     }
-// }
-// export function chooseGenus(_id, displayed, chose) {
-//     console.log('chosegenus');
-//     return (dispatch) => {
-//         dispatch({
-//             type: 'CHOOSE_GENUS',
-//             payload: {
-//                 _id: _id,
-//                 displayed: displayed,
-//                 chose: chose
-//             }
-//         });        
-//     }
-// } 
-// export function chooseSpecies(_id, displayed, chose) {
-//         console.log('chosespecies');
-//         return (dispatch) => {
-//             console.log('after dispatch', dispatch);
-//             dispatch({ 
-//                 type: 'CHOOSE_SPECIES', 
-//                 payload: { 
-//                     _id: _id, 
-//                     displayed: displayed, 
-//                     chose: chose 
-//                 } 
-//             });
-//         }
-//     }
-
-
 export function Selection(props) {
     const { card, choice, onSelectGenus, onSelectSpecies } = props;
-    console.log('props ', props);
-    const { _id, name, genus, species } = card;
+    const { _id, name } = card;
     
     
 
@@ -61,10 +21,6 @@ export function Selection(props) {
         <div>
             <form onSubmit={event => {
                 event.preventDefault();
-                {/* let makeChoice = this.makeChoice.bind(this);
-                const chose = event.target;
-                makeChoice(_id, choice, chose);
-                debugger */}
             }}>
                 <p>I think {choice} is the {name}'s...</p>
                 <SelectButton type="submit" onClick={() => onSelectGenus(_id, choice, 'genus')}>Genus</SelectButton>
@@ -87,7 +43,6 @@ export function Selection(props) {
 // )(Selection);
 
 const mapStateToProps = (state) => {
-    debugger
     const selectedCard = state.cards.find((card) => card._id === state.selection._id);
     return {
         card: selectedCard

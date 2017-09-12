@@ -1,4 +1,6 @@
-// export function chooseGenus(_id, displayed, chose) {
+
+
+// export function chooseGenus(_id, displayed, chose ) {
 //     console.log('chosegenus in actions');
 //     return (dispatch) => {
 //         dispatch({

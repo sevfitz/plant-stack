@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Card } from '../components/Card';
 import { cardsAreLoading, getCards, fetchHasErrored } from  '../store/card.actions';
 import { Selection } from '../components/Selection';
-// import { chooseGenus, chooseSpecies } from '../store/selection.actions';
+// import { chooseGenus } from '../store/selection.actions';
 
 function fetchData() {
     return (dispatch) => {
@@ -22,7 +22,6 @@ function fetchData() {
 }
 
 function chooseGenus(_id, displayed, chose) {
-    console.log('chosegenus');
     return (dispatch) => {
         dispatch({
             type: 'CHOOSE_GENUS',
@@ -35,9 +34,7 @@ function chooseGenus(_id, displayed, chose) {
     }
 } 
 function chooseSpecies(_id, displayed, chose) {
-        console.log('chosespecies');
         return (dispatch) => {
-            console.log('after dispatch', dispatch);
             dispatch({ 
                 type: 'CHOOSE_SPECIES', 
                 payload: { 
@@ -50,12 +47,7 @@ function chooseSpecies(_id, displayed, chose) {
 }
 
 export class Game extends Component {
-    
-    // constructor() {
-    //     super();
-    //     this.chooseGenus = this.chooseGenus.bind(this);
-    //     this.chooseSpecies = this.chooseSpecies.bind(this);
-    // }
+
     componentDidMount() {
         this.props.fetchData();
     }
@@ -95,10 +87,6 @@ const mapStateToProps = (state) => {
     };
 };
 
-// function mapDispatchToProps(dispatch) {
-//     return bindActionCreators({ cardsAreLoading, getCards, fetchHasErrored, chooseGenus, chooseSpecies, fetchData }, dispatch);
-// }
-
 const mapDispatchToProps = {
     fetchData,
     chooseGenus,
@@ -111,5 +99,4 @@ export default connect(mapStateToProps, mapDispatchToProps)(Game);
 // card objects as seen - first put on the right side, then make card
 // components
 
-// also TODO: auth with addCard being option after logging in
-// then show data after add it?
+//  show data after add it on /cards?

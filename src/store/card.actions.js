@@ -1,4 +1,4 @@
-import { ADD_CARD, GET_CARDS, FETCH_HAS_ERRORED, CARDS_ARE_LOADING, CARDS_RETRIEVED } from './card.constants';
+import { ADD_CARD, GET_CARDS, FETCH_HAS_ERRORED, CARDS_ARE_LOADING } from './card.constants';
 import api from '../services/cardApi';
 
 export function fetchHasErrored(boolean) {
@@ -14,13 +14,6 @@ export function cardsAreLoading(boolean) {
         areLoading: boolean
     };
 }
-
-// export function cardsRetrieved(cards) {
-//     return {
-//         type: CARDS_RETRIEVED,
-//         payload: cards
-//     };
-// }
 
 export function makeAddCard(api) {
     return function addCard(card) {

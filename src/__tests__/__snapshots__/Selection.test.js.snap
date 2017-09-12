@@ -2,14 +2,27 @@
 
 exports[`Selection Component Snapshot displays correct properties 1`] = `
 <div>
-  <form>
+  <form
+    onSubmit={[Function]}
+  >
     <p>
-      I think this is this plant's...
+      I think 
+       is the 
+      's...
     </p>
-    <styled.button>
+    <styled.button
+      onClick={[Function]}
+      type="submit"
+    >
       Genus
     </styled.button>
-    <styled.button>
+    <span>
+       OR 
+    </span>
+    <styled.button
+      onClick={[Function]}
+      type="submit"
+    >
       Species
     </styled.button>
   </form>

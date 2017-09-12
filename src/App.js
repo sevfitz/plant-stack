@@ -17,15 +17,6 @@ class App extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   console.log('props are', this.props);
-  //   const setReady = () => this.setState({ ready: true });
-
-  //   this.props 
-  //     .checkForToken()
-  //     .then(setReady, setReady);
-  // }
-
   render() {
     return (
       <Router>
@@ -33,14 +24,12 @@ class App extends Component {
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <h2>Genus or Species??</h2>
-            <hr/>
             <Nav />
           </div>
           <main>
-            {/* {this.state.ready && <Routes/>} */}
             <Routes />
           </main>
-          <footer>Plant Game by sevfitz, 2017</footer>
+          <footer style={{ position: 'absolute', bottom: 0 }}>Plant Game by sevfitz, 2017</footer>
         </div>
       </Router>
     );

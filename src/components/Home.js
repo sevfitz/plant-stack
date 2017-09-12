@@ -7,12 +7,12 @@ const LoginPrompt = () => (
         <Link to="/auth/signin">Sign in</Link>
         {' or '}
         <Link to="/auth/signup">Sign up</Link>
-        {' to add your own cards.'}
+        {' to add your own cards to the game.'}
     </p>
 );
 
 const Instructions = ({ name }) => (
-    <p>Welcome {name}! <Link to="/cards">View your cards</Link>.</p>
+    <p>Welcome {name}! <Link to="/cards">Add a card!</Link>.</p>
 );
 
 export function Home({ user }) {

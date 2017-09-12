@@ -25,23 +25,17 @@ exports[`Card Component Test displays correct properties 1`] = `
     Lavender
   </p>
   <div>
-    <Choice
-      genus="Lavandula"
-      species="Angustifolia"
-    />
+    <p
+      style={
+        Object {
+          "color": "brown",
+          "fontSize": "1.5em",
+        }
+      }
+    >
+      something
+      ??
+    </p>
   </div>
 </div>
-`;
-
-exports[`Choice Component Test displays correct properties 1`] = `
-<p
-  style={
-    Object {
-      "color": "brown",
-      "fontSize": "1.5em",
-    }
-  }
->
-  ??
-</p>
 `;
