@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Selection Component Snapshot displays correct properties 1`] = `
+<div>
+  <form
+    onSubmit={[Function]}
+  >
+    <p>
+      I think 
+       is the 
+      's...
+    </p>
+    <styled.button
+      onClick={[Function]}
+      type="submit"
+    >
+      Genus
+    </styled.button>
+    <span>
+       OR 
+    </span>
+    <styled.button
+      onClick={[Function]}
+      type="submit"
+    >
+      Species
+    </styled.button>
+  </form>
+</div>
+`;

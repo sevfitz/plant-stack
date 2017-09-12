@@ -1,0 +1,57 @@
+{
+  "cards": [
+    {
+      "_id": "59b18f581bcaca0242f09846",
+      "name": "English Lavender",
+      "genus": "Lavandula",
+      "species": "Angustifolia",
+      "description": "English lavender is commonly grown as an ornamental plant. It is popular for its colourful flowers, its fragrance, and its ability to survive with low water consumption.",
+      "url": "http://thegraphicsfairy.com/wp-content/uploads/2013/08/Lavender-Botanical-Printable-GraphicsFairysm.jpg"
+    },
+    {
+      "_id": "59b18f951bcaca0242f09847",
+      "name": "Camellia",
+      "genus": "Camellia",
+      "species": "Japonica",
+      "description": "Camellias are found in eastern and southern Asia, from the Himalayas east to Japan and Indonesia. There are 100–300 described species, with some controversy over the exact number. There are also around 3,000 hybrids.",
+      "url": "http://thegraphicsfairy.com/wp-content/uploads/blogger/_CarNcodpCMA/TK6Dlcez5II/AAAAAAAAJUQ/1xVRliaxLTM/s1600/camellia-graphicsfairy005bsm.jpg"
+    },
+    {
+      "_id": "59b18fbe1bcaca0242f09848",
+      "name": "Amaryllis",
+      "genus": "Hippeastrum",
+      "species": "Reginae",
+      "description": "The name Hippeastrum, given to it by William Herbert, means \"Knight's-star-lily\", although precisely what Herbert meant by the name is not certain. For many years there was confusion among botanists over the generic names Amaryllis and Hippeastrum, one result of which is that the common name \"amaryllis\" is mainly used for cultivars of this genus, often sold as indoor flowering bulbs particularly at Christmas in the northern hemisphere. By contrast the generic name Amaryllis applies to bulbs from South Africa, usually grown outdoors. ",
+      "url": "http://thegraphicsfairy.com/wp-content/uploads/2013/11/Free-Christmas-Printables-Amaryllis-GraphicsFairy-sm.jpg"
+    },
+    {
+      "_id": "59b18fef1bcaca0242f09849",
+      "name": "Egyptian Water Lily",
+      "genus": "Nymphaea",
+      "species": "Pubescens",
+      "description": "The leaves of this plant have fuzzy or hairy undersides and the stems are covered by the same hairs as well, hence the name \"pubescens\" or \"hairy\" of the species. This is not a characteristic that is apparent when looking at the plant from above the water though.",
+      "url": "http://thegraphicsfairy.com/wp-content/uploads/2013/04/Vintage-Printable-Water-Lily-GraphicsFairy-sm3.jpg"
+    },
+    {
+      "_id": "59b190141bcaca0242f0984a",
+      "name": "Oxeye Daisy",
+      "genus": "Leucanthemum",
+      "species": "Vulgare",
+      "description": "This is a widespread flowering plant native to Europe and the temperate regions of Asia and an introduced plant to North America, Australia and New Zealand. It is one of a number of family Asteraceae plants to be called a \"daisy\", and has the additional vernacular names common daisy, dog daisy and moon daisy.",
+      "url": "http://thegraphicsfairy.com/wp-content/uploads/blogger/-muCu66Md59g/ToJcuJvaE9I/AAAAAAAAONE/0jvZlNAtdxM/s1600/daisy%2Bvintage%2Bimage%2Bgraphicsfairy005sm.jpg"
+    }
+  ],
+  "selection": {
+    "_id": "59b18f581bcaca0242f09846",
+    "choice": "Lavandula"
+  },
+  "fetchHasErrored": false,
+  "cardsAreLoading": false
+}
+
+command+k, then m, then type into box: JSON
+in console: $r.store.getState()
+to see the current store
+
+copy($r.store.getState())
+to copy that info to clipboard

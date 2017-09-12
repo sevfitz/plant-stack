@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -10,23 +10,18 @@ Card.PropTypes = {
     url: PropTypes.string.isRequired
 };
 
-export function Choice({ genus, species }) {
-    const choiceArray = [genus, species];
-    const index = Math.floor(Math.random() * choiceArray.length);
-    return (
-        <p>
-            {choiceArray[index]}
-        </p>
-    );
-}
-
-export function Card({ name, genus, species, description, url }) {
-    
+export function Card(props) {
+    const { card, choice } = props;
+    const { name, description, url } = card;
     return (
         <div style={{ border: 'solid black 1px', width: 300, height: 400, margin: '50px auto' }}>
             <img style={{ maxHeight: 300 }} src={url} alt={description} />
             <p>Common Name: {name}</p>
-            <div><Choice genus={genus} species={species} /></div>
+            <div>
+            <p style={{ fontSize: '1.5em', color: 'brown' }}>
+                {choice}??
+            </p>
+            </div>
         </div>
     );
 }

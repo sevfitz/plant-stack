@@ -1,4 +1,4 @@
-import { ADD_CARD, GET_CARDS, FETCH_HAS_ERRORED, CARDS_ARE_LOADING, CARDS_RETRIEVED } from './card.constants';
+import { ADD_CARD, GET_CARDS, FETCH_HAS_ERRORED, CARDS_ARE_LOADING } from './card.constants';
 import api from '../services/cardApi';
 
 export function fetchHasErrored(boolean) {
@@ -9,19 +9,11 @@ export function fetchHasErrored(boolean) {
 }
 
 export function cardsAreLoading(boolean) {
-    console.log('in cardsAreLoading', boolean);
     return {
         type: CARDS_ARE_LOADING,
         areLoading: boolean
     };
 }
-
-// export function cardsRetrieved(cards) {
-//     return {
-//         type: CARDS_RETRIEVED,
-//         payload: cards
-//     };
-// }
 
 export function makeAddCard(api) {
     return function addCard(card) {
@@ -41,8 +33,8 @@ export function makeGetCards(api) {
             return api
                 .getAll()
                 .then(cards => {
-                    console.log('inside getCards, cards are', cards);
-                    dispatch({ type: GET_CARDS, payload: cards })
+                    dispatch({ type: GET_CARDS, payload: cards });
+                    return cards;
                 });
         }
     }

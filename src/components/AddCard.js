@@ -42,5 +42,6 @@ export default connect(
             species: state.species, 
             description: state.description, 
             url: state.url 
-    })}
+        })
+    }
 )(AddCard);
