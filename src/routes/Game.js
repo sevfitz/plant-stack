@@ -28,7 +28,7 @@ function chooseGenus(_id, displayed, chose) {
             payload: {
                 _id: _id,
                 displayed: displayed,
-                chose: chose
+                choice: chose
             }
         });        
     }
@@ -40,7 +40,7 @@ function chooseSpecies(_id, displayed, chose) {
                 payload: { 
                     _id: _id, 
                     displayed: displayed,
-                    chose: chose
+                    choice: chose
                 }
             });
         }
@@ -51,8 +51,6 @@ export class Game extends Component {
     componentDidMount() {
         this.props.fetchData();
     }
-
-    
 
     render() {
         if (this.props.hasErrored) {
@@ -78,8 +76,19 @@ export class Game extends Component {
 const mapStateToProps = (state) => {
     const selectedCard = state.cards.find((card) => card._id === state.selection._id);
 
+    // const cardToPush = {
+    //     name: selectedCard.name,
+    //     genus: selectedCard.genus,
+    //     species: selectedCard.species,
+    //     description: selectedCard.description,
+    //     url: selectedCard.url,
+    //     gotGenusRight: 
+    //     gotSpeciesRight:
+    // };
+
     return {
         card: selectedCard,
+        cards: state.cards,
         display: state.selection.choice,
         seenCards: state.seenCards,
         hasErrored: state.fetchHasErrored,

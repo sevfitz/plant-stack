@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 const SelectButton = styled.button`
@@ -38,24 +38,33 @@ export function Selection(props) {
 //             genus: state.genus, 
 //             species: state.species, 
 //             description: state.description, 
-//             url: state.url 
+//             url: state.url,
+//             seenCards: state.seenCards,
+//             cards: state.cards
 //     })}
 // )(Selection);
 
-const mapStateToProps = (state) => {
-    const selectedCard = state.cards.find((card) => card._id === state.selection._id);
-    return {
-        card: selectedCard
-    };
-};
+// const mapStateToProps = (state) => {
+//     const selectedCard = state.cards.find((card) => card._id === state.selection._id);
+//     return {
+//         card: selectedCard,
+//         name: state.name, 
+//         genus: state.genus, 
+//         species: state.species, 
+//         description: state.description, 
+//         url: state.url,
+//         seenCards: state.seenCards,
+//         cards: state.cards
+//     };
+// };
 
 // function mapDispatchToProps(dispatch) {
 //     return bindActionCreators({ chooseGenus, chooseSpecies }, dispatch);
 // }
 
-const mapDispatchToProps = {
-    // chooseGenus,
-    // chooseSpecies
-}
+// const mapDispatchToProps = {
+//     chooseGenus,
+//     chooseSpecies
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Selection);
+// export default connect(mapStateToProps, mapDispatchToProps)(Selection);
