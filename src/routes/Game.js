@@ -68,7 +68,7 @@ export class Game extends Component {
                     <Card card={this.props.card} choice={this.props.display}/>
                 </div>
                 <div>
-                    <Selection card={this.props.card} choice={this.props.display} onSelectGenus={this.props.chooseGenus} onSelectSpecies={this.props.chooseSpecies} />
+                    <Selection card={this.props.card} choice={this.props.display} allCards={this.props.cards} seenCards={this.props.seenCards} onSelectGenus={this.props.chooseGenus} onSelectSpecies={this.props.chooseSpecies} />
                 </div>
             </div>
         );
@@ -80,6 +80,7 @@ const mapStateToProps = (state) => {
 
     return {
         card: selectedCard,
+        cards: state.cards,
         display: state.selection.choice,
         seenCards: state.seenCards,
         hasErrored: state.fetchHasErrored,

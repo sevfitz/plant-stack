@@ -12,7 +12,7 @@ const SelectButton = styled.button`
 `;
 
 export function Selection(props) {
-    const { card, choice, onSelectGenus, onSelectSpecies } = props;
+    const { card, choice, allCards, seenCards, onSelectGenus, onSelectSpecies } = props;
     const { _id, name } = card;
     
     
@@ -38,14 +38,23 @@ export function Selection(props) {
 //             genus: state.genus, 
 //             species: state.species, 
 //             description: state.description, 
-//             url: state.url 
+//             url: state.url,
+//             seenCards: state.seenCards,
+//             cards: state.cards
 //     })}
 // )(Selection);
 
 const mapStateToProps = (state) => {
     const selectedCard = state.cards.find((card) => card._id === state.selection._id);
     return {
-        card: selectedCard
+        card: selectedCard,
+        name: state.name, 
+        genus: state.genus, 
+        species: state.species, 
+        description: state.description, 
+        url: state.url,
+        seenCards: state.seenCards,
+        cards: state.cards
     };
 };
 
