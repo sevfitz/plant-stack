@@ -23,9 +23,9 @@ export function Selection(props) {
                 event.preventDefault();
             }}>
                 <p>I think {choice} is the {name}'s...</p>
-                <SelectButton type="submit" onClick={() => onSelectGenus(_id, choice, 'genus')}>Genus</SelectButton>
+                <SelectButton className='button is-info is-outlined' type="submit" onClick={() => onSelectGenus(_id, choice, 'genus')}>Genus</SelectButton>
                 <span> OR </span>
-                <SelectButton type="submit" onClick={() => onSelectSpecies(_id, choice, 'species')}>Species</SelectButton>
+                <SelectButton className='button is-info is-outlined'type="submit" onClick={() => onSelectSpecies(_id, choice, 'species')}>Species</SelectButton>
             </form>
         </div>
     );
