@@ -14,12 +14,12 @@ export function Card(props) {
     const { card, choice } = props;
     const { name, description, url } = card;
     return (
-        <div className='box'>
-            <div className='media'>
-                <figure className='image is-128x128'>
+        <div className='card is-centered'>
+            <div className='card-content is-centered'>
+                <figure className='image is-centered is-128x128'>
                     <img src={url} alt={description} />
                 </figure>
-                <div className='card-content'>
+                <div>
                     <p className='title is-4'>Common Name: {name}</p>
                     <div>
                         <p className='title is-6' style={{ fontSize: '1.5em', color: 'brown' }}>
