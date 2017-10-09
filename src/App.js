@@ -7,6 +7,7 @@ import { checkForToken } from './store/auth.actions';
 
 import Routes from './Routes';
 import Nav from './components/Nav';
+import 'bulma/css/bulma.css';
 
 class App extends Component {
 
