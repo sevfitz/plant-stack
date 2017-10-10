@@ -61,9 +61,13 @@ export class Game extends Component {
         }
         
         return (
-            <div>
-                <div>
-                    <Card card={this.props.card} choice={this.props.display}/>
+            <div className='content'>
+                <div className='columns is-3'>
+                    <div className='column is-one-third'></div>
+                    <div className='column is-one-third'>
+                        <Card card={this.props.card} choice={this.props.display}/>
+                    </div>
+                    <div className='column is-one-third'></div>
                 </div>
                 <div>
                     <Selection card={this.props.card} choice={this.props.display} onSelectGenus={this.props.chooseGenus} onSelectSpecies={this.props.chooseSpecies} />
