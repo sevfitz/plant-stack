@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './plant_game_logo.png';
+import logo from './rose-icon.png';
 import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -23,7 +23,9 @@ class App extends Component {
       <Router>
         <div className="App">
           <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
+            <span className='icon'>
+              <img src={logo} className="App-logo image is-32x32" alt="logo" />
+            </span>
             <h2>Genus or Species??</h2>
             <Nav />
           </div>
