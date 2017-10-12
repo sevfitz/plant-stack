@@ -14,16 +14,20 @@ export function Card(props) {
   const { card, choice } = props;
   const { name, description, url } = card;
   return (
-    <div className='card' style={{ margin: '20', padding: '20' }}>
-      <div className='card-image'>
-        <figure className='image is-128x256'>
+    <div>
+      <header className="card-header">
+        <p className="card-header-title is-4 is-centered">Common Name: {name}</p>   
+      </header>
+      <div className="card-image">
+        <figure className="image is-128x256" style={{ margin: "20" }}>
           <img src={url} alt={description} />
         </figure>
       </div>
-      <div className='card-content'>
-        <div className='media-content'>
-          <p className='title is-4'>Common Name: {name}</p>
-          <p className='title is-6' style={{ fontSize: '1.5em', color: 'brown' }}>{choice}??</p>
+      <div className="columns">
+        <div className="column is-centered">
+          <div className="card-content">
+            <p className="title is-6" style={{ fontSize: "1.5em", color: "brown" }}>{choice}</p>
+          </div>
         </div>
       </div>
     </div>

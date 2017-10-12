@@ -65,12 +65,12 @@ export class Game extends Component {
                 <div className='columns is-3'>
                     <div className='column is-one-third'></div>
                     <div className='column is-one-third'>
-                        <Card card={this.props.card} choice={this.props.display}/>
+                        <div className='card' style={{ margin: '50'}}>
+                            <Card card={this.props.card} choice={this.props.display}/>
+                            <Selection card={this.props.card} choice={this.props.display} onSelectGenus={this.props.chooseGenus} onSelectSpecies={this.props.chooseSpecies} />
+                        </div>
                     </div>
                     <div className='column is-one-third'></div>
-                </div>
-                <div>
-                    <Selection card={this.props.card} choice={this.props.display} onSelectGenus={this.props.chooseGenus} onSelectSpecies={this.props.chooseSpecies} />
                 </div>
             </div>
         );

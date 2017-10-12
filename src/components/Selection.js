@@ -2,14 +2,14 @@ import React from 'react';
 // import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-const SelectButton = styled.button`
-    background-color: #ffed64;
-    font-size: 20px;
-    height: 40px;
-    width: 100px;
-    border: 2px solid #ffed64;
-    border-radius: 25px;
-`;
+// const SelectButton = styled.button`
+//     background-color: #ffed64;
+//     font-size: 20px;
+//     height: 40px;
+//     width: 100px;
+//     border: 2px solid #ffed64;
+//     border-radius: 25px;
+// `;
 
 export function Selection(props) {
     const { card, choice, onSelectGenus, onSelectSpecies } = props;
@@ -18,16 +18,17 @@ export function Selection(props) {
     
 
     return(
-        <div>
-            <form onSubmit={event => {
-                event.preventDefault();
-            }}>
-                <p>I think {choice} is the {name}'s...</p>
-                <SelectButton className='button is-info is-outlined' type="submit" onClick={() => onSelectGenus(_id, choice, 'genus')}>Genus</SelectButton>
-                <span> OR </span>
-                <SelectButton className='button is-info is-outlined'type="submit" onClick={() => onSelectSpecies(_id, choice, 'species')}>Species</SelectButton>
-            </form>
-        </div>
+        <form className="card-footer" onSubmit={event => {
+            event.preventDefault();
+        }}>
+            {/* <span className="card-footer-item"> */}
+                <button className="button is-medium is-outlined is-primary" type="submit" onClick={() => onSelectGenus(_id, choice, 'genus')}>Genus</button>
+            {/* </span> */}
+            {/* <span className="card-footer-item"></span> */}
+            {/* <span className="card-footer-item"> */}
+                <button className="button is-medium is-outlined is-primary is-pulled-right" type="submit" onClick={() => onSelectSpecies(_id, choice, 'species')}>Species</button>
+            {/* </span> */}
+        </form>
     );
 }
 

@@ -23,7 +23,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <div className="App-header">
-            <span className='icon'>
+            <span className="icon">
               <img src={logo} className="App-logo image is-32x32" alt="logo" />
             </span>
             <h2>Genus or Species??</h2>
@@ -32,7 +32,11 @@ class App extends Component {
           <main>
             <Routes />
           </main>
-          <footer style={{ position: 'absolute', bottom: 0 }}>Plant Game by sevfitz, 2017</footer>
+          <footer className="footer">
+            <div className="content has-text-centered">
+              <p>Plant Game © <a href="https://github.com/sevfitz" alt="https://github.com/sevfitz">sevfitz</a> 2017</p>
+            </div>
+          </footer>
         </div>
       </Router>
     );
