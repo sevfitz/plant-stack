@@ -22,7 +22,7 @@ export function Selection(props) {
             event.preventDefault();
         }}>
             {/* <span className="card-footer-item"> */}
-                <button className="button is-medium is-outlined is-primary" type="submit" onClick={() => onSelectGenus(_id, choice, 'genus')}>Genus</button>
+                <button className="button is-medium is-outlined is-primary is-pulled-left" type="submit" onClick={() => onSelectGenus(_id, choice, 'genus')}>Genus</button>
             {/* </span> */}
             {/* <span className="card-footer-item"></span> */}
             {/* <span className="card-footer-item"> */}

@@ -25,8 +25,8 @@ export function Card(props) {
       </div>
       <div className="columns">
         <div className="column is-centered">
-          <div className="card-content">
-            <p className="title is-6" style={{ fontSize: "1.5em", color: "brown" }}>{choice}</p>
+          <div className="card-content is-paddingless">
+            <p className="title is-6" style={{ fontSize: "1.5em", color: "brown", marginBottom: "20" }}>{choice}</p>
           </div>
         </div>
       </div>
