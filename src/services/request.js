@@ -3,7 +3,7 @@ import store from '../store/index';
 
 let token = '';
 
-const storage = window.localStorage;
+const storage = localStorage;
 
 store.subscribe(() => {
     const { token: newToken } = store.getState().auth;

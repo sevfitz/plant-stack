@@ -11,6 +11,8 @@ const Form = styled.form`
     }
 `;
 
+// login form
+
 export default ({ submit, allowName = false }) => (
     <Form onSubmit={e => {
         e.preventDefault();
