@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './rose-icon.png';
+import logo from '../rose-icon.png';
 import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
