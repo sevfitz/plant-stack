@@ -1,8 +1,8 @@
-import { cardsAreLoading, getCards, fetchHasErrored } from  './actions';
-import 
+import { cardsAreLoading, getCards, getHasErrored } from  './actions';
+import * as actions from './constants';
 
 
-function fetchData() {
+export function getData() {
     return (dispatch) => {
         dispatch(getCards())
             .then(res => {
@@ -11,7 +11,7 @@ function fetchData() {
                 return res;
             })
             .catch((e) => {
-                dispatch(fetchHasErrored(true));
+                dispatch(getHasErrored(true));
             });
     }
 }
@@ -19,7 +19,7 @@ function fetchData() {
 export function chooseGenus(_id, displayed, chose) {
     return (dispatch) => {
         dispatch({
-            type: 'CHOOSE_GENUS',
+            type: actions.chooseGenus,
             payload: {
                 _id: _id,
                 displayed: displayed,
@@ -32,7 +32,7 @@ export function chooseGenus(_id, displayed, chose) {
 export function chooseSpecies(_id, displayed, chose) {
     return (dispatch) => {
         dispatch({
-            type: 'CHOOSE_SPECIES',
+            type: actions.chooseSpecies,
             payload: {
                 _id: _id,
                 displayed: displayed,

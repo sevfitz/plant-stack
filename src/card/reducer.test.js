@@ -1,4 +1,4 @@
-import { fetchHasErrored, cardsAreLoading, cards } from './reducers';
+import { getHasErrored, cardsAreLoading, cards } from './reducers';
 import * as actions from './constants';
 
 describe('Card reducer', () => {
@@ -23,19 +23,19 @@ describe('Card reducer', () => {
     });
 });
 
-describe('fetchHasErrored reducer', () => {
+describe('getHasErrored reducer', () => {
     it('initial state is false', () => {
-        const newState = fetchHasErrored(undefined, { type: undefined });
+        const newState = getHasErrored(undefined, { type: undefined });
         expect(newState).toEqual(false);
     });
 
     it('payload of true updates state to hasErrored is true', () => {
-        const newState = fetchHasErrored( false, { type: actions.FETCH_HAS_ERRORED, hasErrored: true });
+        const newState = getHasErrored( false, { type: actions.get_HAS_ERRORED, hasErrored: true });
         expect(newState).toEqual(true);
     });
 
     it('payload of false updates state to hasErrored is false', () => {
-        const newState = fetchHasErrored( true, { type: actions.FETCH_HAS_ERRORED, hasErrored: false });
+        const newState = getHasErrored( true, { type: actions.FETCH_HAS_ERRORED, hasErrored: false });
         expect(newState).toEqual(false);
     });
 });

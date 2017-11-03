@@ -1,5 +1,5 @@
-export const ADD_CARD = 'ADD_CARD';
+
 export const GET_CARDS = 'GET_CARDS';
-export const FETCH_HAS_ERRORED = 'FETCH_HAS_ERRORED';
+export const GET_HAS_ERRORED = 'GET_HAS_ERRORED';
 export const CARDS_ARE_LOADING = 'CARDS_ARE_LOADING';
 export const CARDS_RETRIEVED = 'CARDS_RETRIEVED';
