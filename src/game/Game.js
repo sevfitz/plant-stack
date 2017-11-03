@@ -1,50 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { addCard } from '../card/actions';
-// import AddCard from '../add-card/AddCard';
 import { Card } from '../card/Card';
-import { cardsAreLoading, getCards, fetchHasErrored } from  '../card/actions';
 import { Selection } from '../selection/Selection';
-// import { chooseGenus } from '../selection/actions';
-
-function fetchData() {
-    return (dispatch) => {
-        dispatch(getCards())
-            .then(res => {
-                dispatch({ type: 'RANDOM_CARD', payload: { cards: res } });
-                dispatch(cardsAreLoading(false));
-                return res;
-            })
-            .catch((e) => {
-                dispatch(fetchHasErrored(true));
-            });
-    }
-}
-
-function chooseGenus(_id, displayed, chose) {
-    return (dispatch) => {
-        dispatch({
-            type: 'CHOOSE_GENUS',
-            payload: {
-                _id: _id,
-                displayed: displayed,
-                choice: chose
-            }
-        });        
-    }
-} 
-function chooseSpecies(_id, displayed, chose) {
-        return (dispatch) => {
-            dispatch({ 
-                type: 'CHOOSE_SPECIES', 
-                payload: { 
-                    _id: _id, 
-                    displayed: displayed,
-                    choice: chose
-                }
-            });
-        }
-}
+import { chooseGenus, chooseSpecies } from './actions';
 
 export class Game extends Component {
 
@@ -57,20 +15,20 @@ export class Game extends Component {
             return <p>There was an error loading the cards.</p>;
         }
         if (this.props.isLoading) {
-            return <p>Loading...</p>;
+            return <p className="is-loading">Loading...</p>;
         }
         
         return (
-            <div className='content'>
-                <div className='columns is-3'>
-                    <div className='column is-one-third'></div>
-                    <div className='column is-one-third'>
-                        <div className='card' style={{ margin: '50'}}>
+            <div className="content">
+                <div className="columns is-3">
+                    <div className="column is-one-third"></div>
+                    <div className="column is-one-third">
+                        <div className="card" style={{ margin: "50"}}>
                             <Card card={this.props.card} choice={this.props.display}/>
                             <Selection card={this.props.card} choice={this.props.display} onSelectGenus={this.props.chooseGenus} onSelectSpecies={this.props.chooseSpecies} />
                         </div>
                     </div>
-                    <div className='column is-one-third'></div>
+                    <div className="column is-one-third"></div>
                 </div>
             </div>
         );

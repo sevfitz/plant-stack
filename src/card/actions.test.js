@@ -3,7 +3,7 @@ import { makeAddCard, makeGetCards } from './actions';
 
 describe('Card actions', () => {
 
-    it('adds a card', () => {
+    it.only('adds a card', () => {
         const api = {
             add(card) {
                 return Promise.resolve(card);
