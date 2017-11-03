@@ -1,5 +1,5 @@
-import { ADD_CARD, GET_CARDS, FETCH_HAS_ERRORED, CARDS_ARE_LOADING } from './card.constants';
-import api from '../services/cardApi';
+import { ADD_CARD, GET_CARDS, FETCH_HAS_ERRORED, CARDS_ARE_LOADING } from './constants';
+import api from './cardApi';
 
 export function fetchHasErrored(boolean) {
     return {

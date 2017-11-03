@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route, Link, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { signin, signup } from '../store/auth.actions';
+import { signin, signup } from '../auth/actions';
 import styled from 'styled-components';
 import Credentials from './Credentials';
 

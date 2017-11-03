@@ -1,6 +1,6 @@
 import assert from 'assert';
-import * as actions from '../store/auth.constants';
-import auth, { user, token, error } from '../store/auth.reducers';
+import * as actions from './constants';
+import auth, { user, token, error } from './reducers';
 
 
 const testPassThru = reducer => {

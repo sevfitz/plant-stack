@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { addCard } from '../store/card.actions';
-// import AddCard from '../components/AddCard';
-import { Card } from '../components/Card';
-import { cardsAreLoading, getCards, fetchHasErrored } from  '../store/card.actions';
-import { Selection } from '../components/Selection';
-// import { chooseGenus } from '../store/selection.actions';
+// import { addCard } from '../card/actions';
+// import AddCard from '../add-card/AddCard';
+import { Card } from '../card/Card';
+import { cardsAreLoading, getCards, fetchHasErrored } from  '../card/actions';
+import { Selection } from '../selection/Selection';
+// import { chooseGenus } from '../selection/actions';
 
 function fetchData() {
     return (dispatch) => {

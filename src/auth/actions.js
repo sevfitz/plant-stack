@@ -1,5 +1,5 @@
-import * as actions from './auth.constants';
-import authApi from '../services/authApi';
+import * as actions from './constants';
+import authApi from './authApi';
 import { getStoredToken } from  '../services/request';
 
 export function checkForToken() {

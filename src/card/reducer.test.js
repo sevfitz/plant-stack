@@ -1,5 +1,5 @@
-import { fetchHasErrored, cardsAreLoading, cards } from '../store/card.reducers';
-import * as actions from '../store/card.constants';
+import { fetchHasErrored, cardsAreLoading, cards } from './reducers';
+import * as actions from './constants';
 
 describe('Card reducer', () => {
     it('initial state', () => {

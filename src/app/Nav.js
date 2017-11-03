@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { signout } from '../store/auth.actions';
+import { signout } from '../auth/actions';
 import styled from 'styled-components';
 
 const NavList = styled.ul`

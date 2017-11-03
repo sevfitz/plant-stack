@@ -1,5 +1,5 @@
-import * as actions from '../store/card.constants';
-import { makeAddCard, makeGetCards } from '../store/card.actions';
+import * as actions from './constants';
+import { makeAddCard, makeGetCards } from './actions';
 
 describe('Card actions', () => {
 

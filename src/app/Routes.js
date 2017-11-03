@@ -5,12 +5,12 @@ import {
     Redirect
 } from 'react-router-dom';
 
-import Home from './components/Home';
-import Auth from './components/Auth';
-import Game from './routes/Game';
-import AddCard from './components/AddCard';
+import Home from './Home';
+import Auth from '../auth/Auth';
+import Game from './Game';
+import AddCard from '../add-card/AddCard';
 
-import PrivateRoute from './PrivateRoute';
+import PrivateRoute from '../auth/PrivateRoute';
 
 export default () => (
     <Switch>

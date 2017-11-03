@@ -3,10 +3,10 @@ import logo from './rose-icon.png';
 import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { checkForToken } from './store/auth.actions';
+import { checkForToken } from '../auth/actions';
 
 import Routes from './Routes';
-import Nav from './components/Nav';
+import Nav from './Nav';
 
 // Import and modify bulma styles
 // import 'bulma/sass/utilities/initial-variables';

@@ -1,5 +1,5 @@
-import * as actions from '../store/selection.constants';
-import { selectGenus } from '../store/selection.actions';
+import * as actions from './constants';
+import { selectGenus } from './actions';
 
 describe.skip('Selection actions', () => {
 
