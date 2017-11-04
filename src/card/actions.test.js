@@ -1,5 +1,6 @@
 import * as actions from './constants';
-import { makeAddCard, makeGetCards } from './actions';
+import { makeGetCards } from './actions';
+import { makeAddCard } from '../add-card/actions';
 
 describe('Card actions', () => {
 

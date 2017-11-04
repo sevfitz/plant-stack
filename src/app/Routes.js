@@ -7,7 +7,7 @@ import {
 
 import Home from './Home';
 import Auth from '../auth/Auth';
-import Game from './Game';
+import Game from '../game/Game';
 import AddCard from '../add-card/AddCard';
 
 import PrivateRoute from '../auth/PrivateRoute';

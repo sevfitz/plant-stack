@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Card } from '../card/Card';
 import { Selection } from '../selection/Selection';
-import { chooseGenus, chooseSpecies } from './actions';
+import { chooseGenus, chooseSpecies, getData } from './actions';
 
 export class Game extends Component {
 
     componentDidMount() {
-        this.props.fetchData();
+        getData();
     }
 
     render() {
@@ -59,7 +59,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-    fetchData,
+    getData,
     chooseGenus,
     chooseSpecies
 };

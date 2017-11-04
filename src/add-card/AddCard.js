@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addCard } from '../card/actions';
+import { addCard } from './actions';
 
 export function AddCard({ dispatch }) {
     return (

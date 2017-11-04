@@ -1,5 +1,5 @@
 import * as actions from './constants';
-import api from './cardApi';
+import api from '../services/cardApi';
 
 export function getHasErrored(boolean) {
     return {
