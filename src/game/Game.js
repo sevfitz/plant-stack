@@ -2,21 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Card } from '../card/Card';
 import { Selection } from '../selection/Selection';
-import { chooseGenus, chooseSpecies, getData } from './actions';
+import { chooseGenus, chooseSpecies, getCards } from './actions';
 
 export class Game extends Component {
 
     componentDidMount() {
-        getData();
+        this.props.getCards();
     }
 
     render() {
-        if (this.props.hasErrored) {
-            return <p>There was an error loading the cards.</p>;
-        }
-        if (this.props.isLoading) {
-            return <p className="is-loading">Loading...</p>;
-        }
         
         return (
             <div className="content">
@@ -49,19 +43,25 @@ const mapStateToProps = (state) => {
     // };
 
     return {
-        card: selectedCard,
+        selection: selectedCard,
         cards: state.cards,
         display: state.selection.choice,
         seenCards: state.seenCards,
-        hasErrored: state.fetchHasErrored,
-        isLoading: state.cardsAreLoading
     };
 };
 
-const mapDispatchToProps = {
-    getData,
-    chooseGenus,
-    chooseSpecies
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getCards: () => {
+            dispatch(getCards());
+        },
+        chooseGenus: () => {
+            dispatch(chooseGenus());
+        },
+        chooseSpecies: () => {
+            dispatch(chooseSpecies());
+        }
+    }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Game);

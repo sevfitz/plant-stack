@@ -1,16 +1,16 @@
-import { ADD_CARD, GET_CARDS, FETCH_HAS_ERRORED, CARDS_ARE_LOADING } from './constants';
+import * as actions from './constants';
 
 
 export function selection(state = {}, { type, payload }) {
     switch (type) {
-        case 'CHOOSE_GENUS':
+        case actions.CHOOSE_GENUS:
             // console.log('chose genus state', state, 'payload', payload);
             // TODO: use state to look up plant; then do something and return that
             return payload;
-        case 'CHOOSE_SPECIES':
+        case actions.CHOOSE_SPECIES:
             // console.log('chose species state', state, 'payload', payload);
             return payload;
-        case 'RANDOM_CARD': {
+        case actions.RANDOM_CARD: {
             const selectedCard = selectCard(payload.cards);
             // console.log('random card state', state, 'random card payload', payload);
             return {
@@ -37,9 +37,9 @@ export function makeChoice({ genus, species }) {
 // export function fillSeenCards()
 
 
-export function fetchHasErrored(state = false, { type, hasErrored }) {
+export function getHasErrored(state = false, { type, hasErrored }) {
     switch (type) {
-        case FETCH_HAS_ERRORED:
+        case actions.GET_HAS_ERRORED:
             return hasErrored;
         default:
             return state;
@@ -48,7 +48,7 @@ export function fetchHasErrored(state = false, { type, hasErrored }) {
 
 export function cardsAreLoading(state = true, { type, areLoading }) {
     switch (type) {
-        case CARDS_ARE_LOADING:
+        case actions.CARDS_ARE_LOADING:
             return areLoading;
         default:
             return state;
@@ -61,9 +61,9 @@ export function cardsAreLoading(state = true, { type, areLoading }) {
 
 export function cards(state = [], { type, payload }) {
     switch (type) {
-        case GET_CARDS:
+        case actions.GET_CARDS:
             return payload;
-        case ADD_CARD:
+        case actions.ADD_CARD:
             return [
                 ...state,
                 payload
