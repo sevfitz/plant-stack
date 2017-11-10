@@ -7,7 +7,10 @@ export const CARDS_RETRIEVED = 'CARDS_RETRIEVED';
 // Add card action
 export const ADD_CARD = 'ADD_CARD';
 
-// Card to show selection actions
+// Selected card actions
 export const CHOOSE_GENUS = 'CHOOSE_GENUS';
 export const CHOOSE_SPECIES = 'CHOOSE_SPECIES';
 export const RANDOM_CARD = 'RANDOM_CARD';
+
+// Collect cards that have been voted on
+export const ADD_TO_SEEN = 'ADD_TO_SEEN';

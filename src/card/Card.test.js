@@ -14,7 +14,7 @@ const species = 'Angustifolia';
 const testCard = { name, genus, species, description, url };
 const testChoice = 'something';
 
-describe('Card Component Test', () => {
+xdescribe('Card Component Test', () => {
 
     it('displays correct properties', () => {
         const wrapper = shallow(<Card card={testCard} choice={testChoice} />);

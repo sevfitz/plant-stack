@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { checkForToken } from '../auth/actions';
+import { getCards } from '../game/actions';
 
 import Routes from './Routes';
 import Nav from './Nav';
@@ -20,6 +21,10 @@ class App extends Component {
       ready: false
     };
   }
+
+  componentDidMount() {
+    this.props.getCards();
+}
 
   render() {
     return (
@@ -46,9 +51,18 @@ class App extends Component {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getCards: () => {
+      dispatch(getCards());
+    },
+    checkForToken: () => {
+      dispatch(checkForToken());
+    }
+  }
+};
+
 export default connect(
-  state => ({ user: state.user }),
-  dispatch => ({
-    checkForToken() { return dispatch(checkForToken()); }
-  })
+  state => ({ user: state.user, cards: state.cards }),
+  mapDispatchToProps
 )(App);

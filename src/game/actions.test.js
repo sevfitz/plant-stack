@@ -1,7 +1,7 @@
 import * as actions from './constants';
 import { selectGenus } from './actions';
 
-describe.skip('Selection actions', () => {
+xdescribe('Selection actions', () => {
 
     it('selection creates corresponding object', () => {
         const selections = []; // eslint-disable-line
@@ -30,48 +30,48 @@ describe.skip('Selection actions', () => {
     });
 });
 
-import * as actions from './constants';
-import { makeGetCards } from './actions';
-import { makeAddCard } from '../add-card/actions';
+// // import * as actions from './constants';
+// // import { makeGetCards } from './actions';
+// // import { makeAddCard } from '../add-card/actions';
 
-describe('Card actions', () => {
+// xdescribe('Card actions', () => {
 
-    it.only('adds a card', () => {
-        const api = {
-            add(card) {
-                return Promise.resolve(card);
-            }
-        };
-        const card = { name: 'test plant card' };
+//     it('adds a card', () => {
+//         const api = {
+//             add(card) {
+//                 return Promise.resolve(card);
+//             }
+//         };
+//         const card = { name: 'test plant card' };
 
-        const dispatched = [];
-        const dispatch = action => { dispatched.push(action) };
-        const addedCard = makeAddCard(api);
-        const dispatchFn = addedCard(card);
+//         const dispatched = [];
+//         const dispatch = action => { dispatched.push(action) };
+//         const addedCard = makeAddCard(api);
+//         const dispatchFn = addedCard(card);
 
-        dispatchFn(dispatch)
-            .then(() => {
-                expect(dispatched).toEqual([ { type: actions.ADD_CARD, payload: card } ]);
-            });
-    });
+//         dispatchFn(dispatch)
+//             .then(() => {
+//                 expect(dispatched).toEqual([ { type: actions.ADD_CARD, payload: card } ]);
+//             });
+//     });
 
-    it('gets all cards', () => {
-        const cards = [1, 2, 3];
-        const api = {
-            getAll() {
-                return Promise.resolve(cards);
-            }
-        };
+//     it('gets all cards', () => {
+//         const cards = [1, 2, 3];
+//         const api = {
+//             getAll() {
+//                 return Promise.resolve(cards);
+//             }
+//         };
 
-        const dispatched = [];
-        const dispatch = action => { dispatched.push(action) };
-        const getCards = makeGetCards(api);
-        const dispatchFn = getCards();
+//         const dispatched = [];
+//         const dispatch = action => { dispatched.push(action) };
+//         const getCards = makeGetCards(api);
+//         const dispatchFn = getCards();
 
-        dispatchFn(dispatch)
-            .then(() => {
-                expect(dispatched).toEqual([ { type: actions.GET_CARDS, payload: cards } ]);
-            });
-    });
+//         dispatchFn(dispatch)
+//             .then(() => {
+//                 expect(dispatched).toEqual([ { type: actions.GET_CARDS, payload: cards } ]);
+//             });
+//     });
 
-});
+// });

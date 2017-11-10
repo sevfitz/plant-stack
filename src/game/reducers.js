@@ -34,7 +34,17 @@ export function makeChoice({ genus, species }) {
     return choiceArray[index];
 }
 
-// export function fillSeenCards()
+export function seenCards(state = [], { type, payload }) {
+    switch (type) {
+        case actions.ADD_TO_SEEN:
+            return [
+                ...state,
+                payload
+            ];
+        default:
+            return state;
+    }
+}
 
 
 export function getHasErrored(state = false, { type, hasErrored }) {
@@ -62,6 +72,7 @@ export function cardsAreLoading(state = true, { type, areLoading }) {
 export function cards(state = [], { type, payload }) {
     switch (type) {
         case actions.GET_CARDS:
+            console.log('in cards reducer returning with payload:', payload);
             return payload;
         case actions.ADD_CARD:
             return [

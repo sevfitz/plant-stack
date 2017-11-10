@@ -1,7 +1,7 @@
 import { getHasErrored, cardsAreLoading, cards } from './reducers';
 import * as actions from './constants';
 
-describe('Card reducer', () => {
+xdescribe('Card reducer', () => {
     it('initial state', () => {
         const newState = cards(undefined, { type: undefined });
         expect(newState).toEqual([]);
@@ -23,7 +23,7 @@ describe('Card reducer', () => {
     });
 });
 
-describe('getHasErrored reducer', () => {
+xdescribe('getHasErrored reducer', () => {
     it('initial state is false', () => {
         const newState = getHasErrored(undefined, { type: undefined });
         expect(newState).toEqual(false);
@@ -40,7 +40,7 @@ describe('getHasErrored reducer', () => {
     });
 });
 
-describe('cardsAreLoading reducer', () => {
+xdescribe('cardsAreLoading reducer', () => {
     it('initial state is true', () => {
         const newState = cardsAreLoading(undefined, { type: undefined });
         expect(newState).toEqual(true);

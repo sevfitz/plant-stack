@@ -11,22 +11,21 @@ Card.PropTypes = {
 };
 
 export function Card(props) {
-  const { card, choice } = props;
-  const { name, description, url } = card;
+  const { selection, cards } = props;
   return (
     <div>
       <header className="card-header">
-        <p className="card-header-title is-4 is-centered">Common Name: {name}</p>   
+        <p className="card-header-title is-4 is-centered">Common Name: {selection.name}</p>   
       </header>
       <div className="card-image">
         <figure className="image is-128x256" style={{ margin: "20" }}>
-          <img src={url} alt={description} />
+          <img src={selection.url} alt={selection.description} />
         </figure>
       </div>
       <div className="columns">
         <div className="column is-centered">
           <div className="card-content is-paddingless">
-            <p className="title is-6" style={{ fontSize: "1.5em", color: "brown", marginBottom: "20" }}>{choice}</p>
+            <p className="title is-6" style={{ fontSize: "1.5em", color: "brown", marginBottom: "20" }}>{selection.choice}</p>
           </div>
         </div>
       </div>

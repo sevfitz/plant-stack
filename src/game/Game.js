@@ -5,21 +5,22 @@ import { Selection } from '../selection/Selection';
 import { chooseGenus, chooseSpecies, getCards } from './actions';
 
 export class Game extends Component {
-
-    componentDidMount() {
-        this.props.getCards();
+    constructor(props) {
+        super(props);
+        this.state = {};
     }
 
+
+
     render() {
-        
         return (
             <div className="content">
                 <div className="columns is-3">
                     <div className="column is-one-third"></div>
                     <div className="column is-one-third">
-                        <div className="card" style={{ margin: "50"}}>
-                            <Card card={this.props.card} choice={this.props.display}/>
-                            <Selection card={this.props.card} choice={this.props.display} onSelectGenus={this.props.chooseGenus} onSelectSpecies={this.props.chooseSpecies} />
+                        <div className="card" style={{ margin: "50" }}>
+                            <Card cards={this.props.cards} selection={this.props.selection} />
+                            {/* <Selection card={this.props.card} choice={this.props.display} onSelectGenus={this.props.chooseGenus} onSelectSpecies={this.props.chooseSpecies} /> */}
                         </div>
                     </div>
                     <div className="column is-one-third"></div>
@@ -45,16 +46,15 @@ const mapStateToProps = (state) => {
     return {
         selection: selectedCard,
         cards: state.cards,
-        display: state.selection.choice,
         seenCards: state.seenCards,
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getCards: () => {
-            dispatch(getCards());
-        },
+        // getCards: () => {
+        //     dispatch(getCards());
+        // },
         chooseGenus: () => {
             dispatch(chooseGenus());
         },

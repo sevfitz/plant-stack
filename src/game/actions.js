@@ -43,6 +43,9 @@ export function chooseSpecies(_id, displayed, chose) {
     }
 }
 
+export function seenCard(){
+    
+}
 
 // export function getHasErrored(boolean) {
 //     return {
@@ -66,13 +69,11 @@ export function makeGetCards(api) {
             return api
                 .getAll()
                 .then(cards => {
-                    console.log('inside getCards returning with cards', cards);
                     dispatch({ type: actions.GET_CARDS, payload: cards });
                     return cards;
                 })
                 .then(res => {
                     dispatch({ type: actions.RANDOM_CARD, payload: { cards: res } });
-                    console.log('res is', res);
                     return res;
                 });
         }

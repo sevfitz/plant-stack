@@ -34,7 +34,7 @@ describe('combined auth reducer', () => {
         { operator: 'deepEqual' });
 });
 
-describe('user reducer', () => {
+xdescribe('user reducer', () => {
 
     testPassThru(user);
     testInit(user, null);
