@@ -26,10 +26,7 @@ export function Selection(props) {
             {/* </span> */}
             {/* <span className="card-footer-item"></span> */}
             {/* <span className="card-footer-item"> */}
-                <button className="button is-medium is-outlined is-primary is-pulled-right" type="submit" onClick={() => {
-                    console.log('id:', _id, 'choice:', choice);
-                    onSelectSpecies(_id, choice, 'species');
-                }}>Species</button>
+                <button className="button is-medium is-outlined is-primary is-pulled-right" type="submit" onClick={() => onSelectSpecies(_id, choice, 'species')}>Species</button>
             {/* </span> */}
         </form>
     );
