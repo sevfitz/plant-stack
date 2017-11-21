@@ -31,6 +31,7 @@ export function chooseGenus(_id, choice, userSelection) {
 }
 
 export function chooseSpecies(_id, choice, userSelection) {
+    console.log('Inside chooseSpecies, id:', _id, 'choice:', choice, 'userSelection:', userSelection);
     return (dispatch) => {
         dispatch({
             type: actions.CHOOSE_SPECIES,

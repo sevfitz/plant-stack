@@ -55,11 +55,11 @@ const mapDispatchToProps = (dispatch) => {
         // getCards: () => {
         //     dispatch(getCards());
         // },
-        chooseGenus: () => {
-            dispatch(chooseGenus());
+        chooseGenus: (_id, choice, userSelection) => {
+            dispatch(chooseGenus(_id, choice, userSelection));
         },
-        chooseSpecies: () => {
-            dispatch(chooseSpecies());
+        chooseSpecies: (_id, choice, userSelection) => {
+            dispatch(chooseSpecies(_id, choice, userSelection));
         }
     }
 };
