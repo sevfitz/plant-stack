@@ -7,19 +7,22 @@ Card.PropTypes = {
   genus: PropTypes.string.isRequired,
   species: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired
+  url: PropTypes.string.isRequired,
+  choice: PropTypes.string.isRequired
 };
 
 export function Card(props) {
   const { selection, cards } = props;
+  const selectedCard = cards.find((card) => card._id === selection._id);
+  
   return (
     <div>
       <header className="card-header">
-        <p className="card-header-title is-4 is-centered">Common Name: {selection.name}</p>   
+        <p className="card-header-title is-4 is-centered">Common Name: {selectedCard.name}</p>   
       </header>
       <div className="card-image">
         <figure className="image is-128x256" style={{ margin: "20" }}>
-          <img src={selection.url} alt={selection.description} />
+          <img src={selectedCard.url} alt={selectedCard.description} />
         </figure>
       </div>
       <div className="columns">
@@ -40,7 +43,8 @@ export default connect(
       genus: state.genus,
       species: state.species,
       description: state.description,
-      url: state.url
+      url: state.url,
+      choice: state.choice
     })
   }
 )(Card);

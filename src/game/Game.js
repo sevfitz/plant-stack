@@ -5,12 +5,6 @@ import { Selection } from '../selection/Selection';
 import { chooseGenus, chooseSpecies, getCards } from './actions';
 
 export class Game extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-
-
 
     render() {
         return (
@@ -19,7 +13,7 @@ export class Game extends Component {
                     <div className="column is-one-third"></div>
                     <div className="column is-one-third">
                         <div className="card" style={{ margin: "50" }}>
-                            <Card cards={this.props.cards} selection={this.props.selection} />
+                            <Card cards={this.props.cards} selection={this.props.selection} selectedCard={this.props.selectedCard}/>
                             {/* <Selection card={this.props.card} choice={this.props.display} onSelectGenus={this.props.chooseGenus} onSelectSpecies={this.props.chooseSpecies} /> */}
                         </div>
                     </div>
@@ -32,7 +26,6 @@ export class Game extends Component {
 
 const mapStateToProps = (state) => {
     const selectedCard = state.cards.find((card) => card._id === state.selection._id);
-
     // const cardToPush = {
     //     name: selectedCard.name,
     //     genus: selectedCard.genus,
@@ -44,7 +37,7 @@ const mapStateToProps = (state) => {
     // };
 
     return {
-        selection: selectedCard,
+        selection: state.selection,
         cards: state.cards,
         seenCards: state.seenCards,
     };

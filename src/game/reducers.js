@@ -12,7 +12,6 @@ export function selection(state = {}, { type, payload }) {
             return payload;
         case actions.RANDOM_CARD: {
             const selectedCard = selectCard(payload.cards);
-            // console.log('random card state', state, 'random card payload', payload);
             return {
                 _id: selectedCard._id,
                 choice: makeChoice(selectedCard)
