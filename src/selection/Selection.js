@@ -12,8 +12,8 @@ import styled from 'styled-components';
 // `;
 
 export function Selection(props) {
-    const { card, choice, onSelectGenus, onSelectSpecies } = props;
-    const { _id, name } = card;
+    const { selectedCard, selection, onSelectGenus, onSelectSpecies } = props;
+    const { _id, choice } = selection;
     
     
 

@@ -4,11 +4,11 @@ import * as actions from './constants';
 export function selection(state = {}, { type, payload }) {
     switch (type) {
         case actions.CHOOSE_GENUS:
-            // console.log('chose genus state', state, 'payload', payload);
+            // console.log('choose genus state', state, 'payload', payload);
             // TODO: use state to look up plant; then do something and return that
             return payload;
         case actions.CHOOSE_SPECIES:
-            // console.log('chose species state', state, 'payload', payload);
+            console.log('choose species state', state, 'payload', payload);
             return payload;
         case actions.RANDOM_CARD: {
             const selectedCard = selectCard(payload.cards);

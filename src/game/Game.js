@@ -6,15 +6,22 @@ import { chooseGenus, chooseSpecies, getCards } from './actions';
 
 export class Game extends Component {
 
+    // componentDidMount() {
+    //     console.log('calling getCards in Game component');
+    //     if (this.props.card === []) this.props.getCards();
+    // }
+
     render() {
+        const selectedCard = this.props.cards.find((card) => card._id === this.props.selection._id);
+        
         return (
             <div className="content">
                 <div className="columns is-3">
                     <div className="column is-one-third"></div>
                     <div className="column is-one-third">
-                        <div className="card" style={{ margin: "50" }}>
-                            <Card cards={this.props.cards} selection={this.props.selection} selectedCard={this.props.selectedCard}/>
-                            {/* <Selection card={this.props.card} choice={this.props.display} onSelectGenus={this.props.chooseGenus} onSelectSpecies={this.props.chooseSpecies} /> */}
+                        <div className="card" style={{ margin: "50px" }}>
+                            <Card selection={this.props.selection} selectedCard={selectedCard}/>
+                            <Selection selection={this.props.selection} selectedCard={selectedCard} onSelectGenus={this.props.chooseGenus} onSelectSpecies={this.props.chooseSpecies} />
                         </div>
                     </div>
                     <div className="column is-one-third"></div>
@@ -25,7 +32,7 @@ export class Game extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const selectedCard = state.cards.find((card) => card._id === state.selection._id);
+    // const selectedCard = state.cards.find((card) => card._id === state.selection._id);
     // const cardToPush = {
     //     name: selectedCard.name,
     //     genus: selectedCard.genus,

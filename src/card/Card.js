@@ -12,8 +12,7 @@ Card.PropTypes = {
 };
 
 export function Card(props) {
-  const { selection, cards } = props;
-  const selectedCard = cards.find((card) => card._id === selection._id);
+  const { selection, selectedCard } = props;
   
   return (
     <div>
@@ -21,14 +20,14 @@ export function Card(props) {
         <p className="card-header-title is-4 is-centered">Common Name: {selectedCard.name}</p>   
       </header>
       <div className="card-image">
-        <figure className="image is-128x256" style={{ margin: "20" }}>
+        <figure className="image is-128x256" style={{ margin: "20px" }}>
           <img src={selectedCard.url} alt={selectedCard.description} />
         </figure>
       </div>
       <div className="columns">
         <div className="column is-centered">
           <div className="card-content is-paddingless">
-            <p className="title is-6" style={{ fontSize: "1.5em", color: "brown", marginBottom: "20" }}>{selection.choice}</p>
+            <p className="title is-6" style={{ fontSize: "1.5em", color: "brown", marginBottom: "20px" }}>{selection.choice}</p>
           </div>
         </div>
       </div>

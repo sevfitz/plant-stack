@@ -17,27 +17,27 @@ import * as actions from './constants';
 //     }
 // }
 
-export function chooseGenus(_id, displayed, chose) {
+export function chooseGenus(_id, choice, userSelection) {
     return (dispatch) => {
         dispatch({
             type: actions.CHOOSE_GENUS,
             payload: {
                 _id: _id,
-                displayed: displayed,
-                choice: chose
+                choice: choice,
+                userSelection: userSelection
             }
         });
     }
 }
 
-export function chooseSpecies(_id, displayed, chose) {
+export function chooseSpecies(_id, choice, userSelection) {
     return (dispatch) => {
         dispatch({
             type: actions.CHOOSE_SPECIES,
             payload: {
                 _id: _id,
-                displayed: displayed,
-                choice: chose
+                choice: choice,
+                userSelection: userSelection
             }
         });
     }
