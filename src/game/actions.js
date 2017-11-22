@@ -30,18 +30,21 @@ export function chooseGenus(_id, choice, userSelection) {
     }
 }
 
-export function chooseSpecies(_id, choice, userSelection) {
-    console.log('Inside chooseSpecies, id:', _id, 'choice:', choice, 'userSelection:', userSelection);
+export function chooseSpecies(_id, choice, cards) {
+    console.log('Inside chooseSpecies, id:', _id, 'choice:', choice, 'cards', cards, 'userSelection:');
     return (dispatch) => {
         dispatch({
             type: actions.CHOOSE_SPECIES,
             payload: {
                 _id: _id,
                 choice: choice,
-                userSelection: userSelection
+                cards: cards,
+                userSelection: 'species'
             }
-        });
-    }
+            // type: actions.VIEW_CARDS,
+            // payload: {}
+        })
+    };
 }
 
 export function seenCard(){

@@ -8,11 +8,15 @@ export function selection(state = {}, { type, payload }) {
             // console.log('choose genus state', state, 'payload', payload);
             // TODO: use state to look up plant; then do something and return that
             return payload;
-        case actions.CHOOSE_SPECIES:
-            // const { _id, choice, userSelection } = payload;
-            console.log('Inside choose species Reducer, state is', state, 'payload is', payload);
-
-            return payload;
+        case actions.CHOOSE_SPECIES: {
+            const { _id, choice, cards, userSelection } = payload;
+            const cardUnderTest = cards.find((card) => card._id === _id);
+            const bool = cardUnderTest[userSelection] === choice;
+            console.log('in choose species, state is:', state, 'payload id:', payload, 'cardUnderTest:', cardUnderTest, 'bool is', bool);
+            return {
+                payload
+            };
+        }
         case actions.RANDOM_CARD: {
             console.log('Inside Random Card Reducer, state is', state, 'payload is', payload);
             const selectedCard = selectCard(payload.cards);
@@ -22,6 +26,7 @@ export function selection(state = {}, { type, payload }) {
             };
         }
         default:
+            console.log('default case, state:', state);
             return state;
     }
 }
@@ -30,6 +35,9 @@ export function cards(state = [], { type, payload }) {
     switch (type) {
         case actions.GET_CARDS:
             return payload;
+        // case actions.VIEW_CARDS:
+        //     console.log('in cards, action was view cards', state, payload);
+        //     return state;
         case actions.ADD_CARD:
             return [
                 ...state,

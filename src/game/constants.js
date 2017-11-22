@@ -1,5 +1,6 @@
 // Card retrieval actions
 export const GET_CARDS = 'GET_CARDS';
+export const VIEW_CARDS = 'VIEW_CARDS';
 export const GET_HAS_ERRORED = 'GET_HAS_ERRORED';
 export const CARDS_ARE_LOADING = 'CARDS_ARE_LOADING';
 export const CARDS_RETRIEVED = 'CARDS_RETRIEVED';

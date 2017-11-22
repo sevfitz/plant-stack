@@ -21,7 +21,7 @@ export class Game extends Component {
                     <div className="column is-one-third">
                         <div className="card" style={{ margin: "50px" }}>
                             <Card selection={this.props.selection} selectedCard={selectedCard}/>
-                            <Selection selection={this.props.selection} selectedCard={selectedCard} onSelectGenus={this.props.chooseGenus} onSelectSpecies={this.props.chooseSpecies} />
+                            <Selection cards={this.props.cards} selection={this.props.selection} selectedCard={selectedCard} onSelectGenus={this.props.chooseGenus} onSelectSpecies={this.props.chooseSpecies} />
                         </div>
                     </div>
                     <div className="column is-one-third"></div>
