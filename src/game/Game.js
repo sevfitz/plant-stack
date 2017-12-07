@@ -13,7 +13,6 @@ export class Game extends Component {
 
     render() {
         const selectedCard = this.props.cards.find((card) => card._id === this.props.selection._id);
-        
         return (
             <div className="content">
                 <div className="columns is-3">

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+
 Card.PropTypes = {
   name: PropTypes.string.isRequired,
   genus: PropTypes.string.isRequired,
@@ -13,7 +14,7 @@ Card.PropTypes = {
 
 export function Card(props) {
   const { selection, selectedCard } = props;
-  
+
   return (
     <div>
       <header className="card-header">

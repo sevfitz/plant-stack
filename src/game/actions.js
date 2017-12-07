@@ -1,5 +1,6 @@
 import api from '../services/cardApi';
 import * as actions from './constants';
+import store from '../store/index';
 
 
 // export function getData() {
@@ -27,6 +28,10 @@ export function chooseGenus(_id, choice, userSelection) {
                 userSelection: userSelection
             }
         });
+        dispatch({
+            type: actions.RANDOM_CARD,
+            payload: { cards: store.getState().cards }
+        });
     }
 }
 
@@ -41,9 +46,11 @@ export function chooseSpecies(_id, choice, cards) {
                 cards: cards,
                 userSelection: 'species'
             }
-            // type: actions.VIEW_CARDS,
-            // payload: {}
-        })
+        });
+        dispatch({
+            type: actions.RANDOM_CARD,
+            payload: { cards: store.getState().cards }
+        });
     };
 }
 
