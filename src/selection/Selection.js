@@ -12,7 +12,7 @@ import styled from 'styled-components';
 // `;
 
 export function Selection(props) {
-    const { selectedCard, selection, cards, onSelectGenus, onSelectSpecies } = props;
+    const { selectedCard, selection, onUserChoice } = props;
     const { _id, choice } = selection;
     
     
@@ -22,11 +22,11 @@ export function Selection(props) {
             event.preventDefault();
         }}>
             {/* <span className="card-footer-item"> */}
-                <button className="button is-medium is-outlined is-primary is-pulled-left" type="submit" onClick={() => onSelectGenus(_id, choice, cards)}>Genus</button>
+                <button className="button is-medium is-outlined is-primary is-pulled-left" type="submit" onClick={() => onUserChoice(_id, choice, 'genus')}>Genus</button>
             {/* </span> */}
             {/* <span className="card-footer-item"></span> */}
             {/* <span className="card-footer-item"> */}
-                <button className="button is-medium is-outlined is-primary is-pulled-right" type="submit" onClick={() => onSelectSpecies(_id, choice, cards)}>Species</button>
+                <button className="button is-medium is-outlined is-primary is-pulled-right" type="submit" onClick={() => onUserChoice(_id, choice, 'species')}>Species</button>
             {/* </span> */}
         </form>
     );

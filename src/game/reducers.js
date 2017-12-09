@@ -6,11 +6,20 @@ import store from '../store/index';
 // make_choice: grade the selection, save the selection, check to see if that plant set is complete, if complete push to show in answer display, initiate random_card choice and display next card
 export function selection(state = {}, { type, payload }) {
     switch (type) {
-        case actions.CHOOSE_GENUS:
-        // console.log('choose genus state', state, 'payload', payload);
-        // TODO: use state to look up plant; then do something and return that
-        return payload;
-        case actions.CHOOSE_SPECIES: {
+        // case actions.CHOOSE_GENUS:
+        // // TODO: use state to look up plant; then do something and return that
+        // return payload;
+        // case actions.CHOOSE_SPECIES: {
+        //     const cards = store.getState().cards;
+        //     const { _id, choice, userSelection } = payload;
+        //     const cardUnderTest = cards.find((card) => card._id === _id);
+        //     const bool = cardUnderTest[userSelection] === choice;
+        //     return {
+        //         payload
+        //     };
+        // }
+        case actions.USER_CHOICE: {
+            console.log('In USER_CHOICE in reducer, state:', state, 'payload:', payload);
             const cards = store.getState().cards;
             const { _id, choice, userSelection } = payload;
             const cardUnderTest = cards.find((card) => card._id === _id);

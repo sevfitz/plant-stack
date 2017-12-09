@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Card } from '../card/Card';
 import { Selection } from '../selection/Selection';
-import { chooseGenus, chooseSpecies, getCards } from './actions';
+import { userChoice, getCards } from './actions';
 
 export class Game extends Component {
 
@@ -20,7 +20,7 @@ export class Game extends Component {
                     <div className="column is-one-third">
                         <div className="card" style={{ margin: "50px" }}>
                             <Card selection={this.props.selection} selectedCard={selectedCard}/>
-                            <Selection cards={this.props.cards} selection={this.props.selection} selectedCard={selectedCard} onSelectGenus={this.props.chooseGenus} onSelectSpecies={this.props.chooseSpecies} />
+                            <Selection selection={this.props.selection} selectedCard={selectedCard} onUserChoice={this.props.userChoice} />
                         </div>
                     </div>
                     <div className="column is-one-third"></div>
@@ -54,11 +54,14 @@ const mapDispatchToProps = (dispatch) => {
         // getCards: () => {
         //     dispatch(getCards());
         // },
-        chooseGenus: (_id, choice, userSelection) => {
-            dispatch(chooseGenus(_id, choice, userSelection));
-        },
-        chooseSpecies: (_id, choice, userSelection) => {
-            dispatch(chooseSpecies(_id, choice, userSelection));
+        // chooseGenus: (_id, choice, userSelection) => {
+        //     dispatch(chooseGenus(_id, choice, userSelection));
+        // },
+        // chooseSpecies: (_id, choice, userSelection) => {
+        //     dispatch(chooseSpecies(_id, choice, userSelection));
+        // }
+        userChoice: (_id, choice, presentedChoice) => {
+            dispatch(userChoice(_id, choice, presentedChoice));
         }
     }
 };

@@ -1,6 +1,5 @@
 import api from '../services/cardApi';
 import * as actions from './constants';
-import store from '../store/index';
 
 
 // export function getData() {
@@ -18,10 +17,10 @@ import store from '../store/index';
 //     }
 // }
 
-export function chooseGenus(_id, choice, userSelection) {
-    return (dispatch) => {
+export function userChoice(_id, choice, userSelection) {
+    return (dispatch, getState) => {
         dispatch({
-            type: actions.CHOOSE_GENUS,
+            type: actions.USER_CHOICE,
             payload: {
                 _id: _id,
                 choice: choice,
@@ -30,29 +29,45 @@ export function chooseGenus(_id, choice, userSelection) {
         });
         dispatch({
             type: actions.RANDOM_CARD,
-            payload: { cards: store.getState().cards }
+            payload: { cards: getState().cards }
         });
     }
 }
 
-export function chooseSpecies(_id, choice, cards) {
-    console.log('Inside chooseSpecies, id:', _id, 'choice:', choice, 'cards', cards, 'userSelection:');
-    return (dispatch) => {
-        dispatch({
-            type: actions.CHOOSE_SPECIES,
-            payload: {
-                _id: _id,
-                choice: choice,
-                cards: cards,
-                userSelection: 'species'
-            }
-        });
-        dispatch({
-            type: actions.RANDOM_CARD,
-            payload: { cards: store.getState().cards }
-        });
-    };
-}
+// export function chooseGenus(_id, choice, userSelection) {
+//     return (dispatch, getState) => {
+//         dispatch({
+//             type: actions.CHOOSE_GENUS,
+//             payload: {
+//                 _id: _id,
+//                 choice: choice,
+//                 userSelection: userSelection
+//             }
+//         });
+//         dispatch({
+//             type: actions.RANDOM_CARD,
+//             payload: { cards: getState().cards }
+//         });
+//     }
+// }
+
+// export function chooseSpecies(_id, choice, cards) {
+//     return (dispatch, getState) => {
+//         dispatch({
+//             type: actions.CHOOSE_SPECIES,
+//             payload: {
+//                 _id: _id,
+//                 choice: choice,
+//                 cards: cards,
+//                 userSelection: 'species'
+//             }
+//         });
+//         dispatch({
+//             type: actions.RANDOM_CARD,
+//             payload: { cards: getState().cards }
+//         });
+//     };
+// }
 
 export function seenCard(){
     

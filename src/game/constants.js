@@ -9,8 +9,9 @@ export const CARDS_RETRIEVED = 'CARDS_RETRIEVED';
 export const ADD_CARD = 'ADD_CARD';
 
 // Selected card actions
-export const CHOOSE_GENUS = 'CHOOSE_GENUS';
-export const CHOOSE_SPECIES = 'CHOOSE_SPECIES';
+export const USER_CHOICE = 'USER_CHOICE';
+// export const CHOOSE_GENUS = 'CHOOSE_GENUS';
+// export const CHOOSE_SPECIES = 'CHOOSE_SPECIES';
 export const RANDOM_CARD = 'RANDOM_CARD';
 
 // Collect cards that have been voted on
