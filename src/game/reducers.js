@@ -6,24 +6,13 @@ import store from '../store/index';
 // make_choice: grade the selection, save the selection, check to see if that plant set is complete, if complete push to show in answer display, initiate random_card choice and display next card
 export function selection(state = {}, { type, payload }) {
     switch (type) {
-        // case actions.CHOOSE_GENUS:
-        // // TODO: use state to look up plant; then do something and return that
-        // return payload;
-        // case actions.CHOOSE_SPECIES: {
-        //     const cards = store.getState().cards;
-        //     const { _id, choice, userSelection } = payload;
-        //     const cardUnderTest = cards.find((card) => card._id === _id);
-        //     const bool = cardUnderTest[userSelection] === choice;
-        //     return {
-        //         payload
-        //     };
-        // }
         case actions.USER_CHOICE: {
-            console.log('In USER_CHOICE in reducer, state:', state, 'payload:', payload);
-            const cards = store.getState().cards;
-            const { _id, choice, userSelection } = payload;
-            const cardUnderTest = cards.find((card) => card._id === _id);
-            const bool = cardUnderTest[userSelection] === choice;
+            const gradedCard = gradeChoice(payload);
+            // CHECK THIS displayCards array - doesn't exist yet
+            if(gradedCard.hasOwnProperty('genusCorrect') && gradedCard.hasOwnProperty('speciesCorrect')) {
+                // state.displayCards.push(gradedCard);
+                console.log('saw this card both times:', gradedCard);
+            }
             return {
                 payload
             };
@@ -68,6 +57,7 @@ export function seenCards(state = [], { type, payload }) {
 
 export function selectCard(cards) {
     const index = Math.floor(Math.random() * cards.length);
+    if(cards[index].hasOwnProperty('speciesCorrect') && cards[index].hasOwnProperty('genusCorrect')) selectCard(cards);
     return cards[index];
 }
 
@@ -77,7 +67,14 @@ export function makeChoice({ genus, species }) {
     return choiceArray[index];
 }
 
-
+export function gradeChoice(payload) {
+    const cards = store.getState().cards;
+    const { _id, choice, userSelection } = payload;
+    const cardUnderTest = cards.find((card) => card._id === _id);
+    const wasCorrect = cardUnderTest[userSelection] === choice;
+    cardUnderTest[`${userSelection}Correct`] = wasCorrect;
+    return cardUnderTest;
+}
 
 
 // export function getHasErrored(state = false, { type, hasErrored }) {
