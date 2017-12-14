@@ -30,6 +30,23 @@ export function AddCard({ dispatch }) {
 
                 <button type="submit">Add Plant</button>   
             </form>
+
+
+            {/* test form for S3 bucket */}
+            <input type="file" id="file-input"/>
+            <p id="status">Please select a file</p>
+            <img id="preview" src="http://thegraphicsfairy.com/wp-content/uploads/2013/08/Lavender-Botanical-Printable-GraphicsFairysm.jpg" />
+
+            <form method="POST" action="/save-details">
+                <input type="hidden" id="image-upload-url" name="image-upload-url" value="http://thegraphicsfairy.com/wp-content/uploads/2013/08/Lavender-Botanical-Printable-GraphicsFairysm.jpg" />
+                <input type="text" name="name" placeholder="Common Name" /><br/>
+                <input type="text" name="genus" placeholder="Genus" /><br/>
+                <input type="text" name="species" placeholder="Species" /><br/>
+                <input type="text" name="description" placeholder="Description" /><br/>
+                <input type="text" name="url" placeholder="URL" />
+                <input type="submit" value="Add Card" />
+            </form>
+
         </div>
     );
 }
